@@ -1,0 +1,79 @@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@ GENERAL @@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+// Desktop
+@media screen and (min-width: 992px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+// Tablet
+@media screen and (max-width: 991px) {
+    .col-tablet-1 {width: 8.33%;}
+    .col-tablet-2 {width: 16.66%;}
+    .col-tablet-3 {width: 25%;}
+    .col-tablet-4 {width: 33.33%;}
+    .col-tablet-5 {width: 41.66%;}
+    .col-tablet-6 {width: 50%;}
+    .col-tablet-7 {width: 58.33%;}
+    .col-tablet-8 {width: 66.66%;}
+    .col-tablet-9 {width: 75%;}
+    .col-tablet-10 {width: 83.33%;}
+    .col-tablet-11 {width: 91.66%;}
+    .col-tablet-12 {width: 100%;}
+}
+// MOBILE DEVICES
+@media screen and (max-width: 768px) {
+    .col-mobile-1 {width: 8.33%;}
+    .col-mobile-2 {width: 16.66%;}
+    .col-mobile-3 {width: 25%;}
+    .col-mobile-4 {width: 33.33%;}
+    .col-mobile-5 {width: 41.66%;}
+    .col-mobile-6 {width: 50%;}
+    .col-mobile-7 {width: 58.33%;}
+    .col-mobile-8 {width: 66.66%;}
+    .col-mobile-9 {width: 75%;}
+    .col-mobile-10 {width: 83.33%;}
+    .col-mobile-11 {width: 91.66%;}
+    .col-mobile-12 {width: 100%;}
+}
+
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@ IPHONE @@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+/* CSS IPHONE Media Queries
+Apple iPhone 11 Media Queries (In terms of Mobile only) */
+@media only screen and (min-width: 414px) and (max-width: 767px) { /* Your Styles... */ }
+
+//Apple iPhone 11 Min-Width Media Queries
+@media only screen and (min-width: 414px) { /* Your Styles... */ }
+
+//Apple iPhone 11 Min-Height Media Queries
+@media only screen and (min-height: 896px) { /* Your Styles... */ }
+
+//Apple iPhone 11 Landscape Media Queries
+@media only screen and (min-width: 896px) and (orientation: landscape) { /* Your Styles... */ }
+
+//Apple iPhone 11 Portrait Media Queries
+@media only screen and (min-width: 414px) and (orientation: portrait) { /* Your Styles... */ }
+
+//Apple iPhone 11 Retina Media Queries
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 326dpi),
+  only screen and (                min-resolution: 2dppx) { 
+    /* Retina styles here */
+}
