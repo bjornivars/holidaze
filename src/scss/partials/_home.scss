@@ -22,7 +22,11 @@
                 padding: 15px 20px 15px 20px;
                 border: 1px solid transparent;
                 border-radius: 2em 0 0 2em ;
+                &:focus{
+                    border-radius: 0;
+                }
             }
+
             &-btn{
                 padding: 15px 20px 15px 20px;
                 border: 1px solid transparent;
@@ -35,6 +39,14 @@
                 &:hover{
                     background-color: $btn-bg-hover;
                     cursor: pointer;
+                }
+            }
+            &-dropdown{
+                background-color: $white;
+                margin-left: 25%;
+                &-ul{
+                    margin: 0;
+                    list-style-type: none;
                 }
             }
         }
