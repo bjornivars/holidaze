@@ -1,10 +1,10 @@
 import React from 'react';
-import HomePage from './../components/home';
+import HomeHeader from '../components/home/homeHeader';
 
 export default function Home() {
     return (
         <div className=' [  ] '>
-            <HomePage />
+            <HomeHeader />
         </div>
     )
 }

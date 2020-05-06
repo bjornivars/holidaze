@@ -1,5 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Proza+Libre&display=swap');
+
 body{
     background-color: $bg-color;
     margin: 0;
     box-sizing: border-box;
+}
+
+h1{
+    font-family: "Proza Libre";
+}
+
+
+// Desktop
+@media screen and (min-width: 992px) {
+
+}
+
+// Tablet
+@media screen and (max-width: 991px) {
+
+}
+// MOBILE DEVICES
+@media screen and (max-width: 768px) {
+
 }

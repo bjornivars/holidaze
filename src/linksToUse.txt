@@ -1,0 +1,6 @@
+FETCHES
+
+http://localhost/holidaze/get-establishments.php
+http://localhost/holidaze/get-establishment.php
+http://localhost/holidaze/get-enquiries.php
+http://localhost/holidaze/get-contacts.php
