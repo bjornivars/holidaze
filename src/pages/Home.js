@@ -41,7 +41,7 @@ export default function Home() {
     return (
         <div className=' [  ] '>
             <div>
-                <div className=" [ header ] ">
+                <div className=" [ header ] "  onClick={(showDropdown === true && isSearched === false) ? closeDropdown : 0 }>
                     <h1 className=" [ header-text ] ">Which hotel would you like to visit?</h1>
                     <div className=" [ header-search col-6 m-auto ] ">
                         <input
@@ -51,22 +51,21 @@ export default function Home() {
                             name="search"
                             placeholder="E.g Sunset"
                             onChange={handleFiltering}
-                            onClick={(showDropdown !== true) ? openDropdown : closeDropdown}
+                            onClick={(showDropdown !== true && isSearched === false) ? openDropdown : closeDropdown}
                         />
                         <button type="submit" className=" [ header-search-btn col-2 ] ">Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></button>
                     </div>
-                    <div className={(showDropdown !== true) ? ' [ d-none ] ' : ' [ d-block header-search-dropdown col-5 ] '}>
-                        <ul className=" [ header-search-dropdown-ul col-10 m-auto ] ">
+                    <div className={(showDropdown !== true && isSearched === false) ? ' [ d-none ] ' : ' [ d-block header-search-dropdown col-5 ] '}>
+                        <ul className=" [ searchUl col-12 m-auto ] ">
                             {
                                 (!isSearched) ?
                                     <>
                                         {
                                             (allEstablishments !== undefined) ?
-                                                allEstablishments.map((value, index) => {
+                                                allEstablishments.slice(0, 4).map((value, index) => {
                                                     return <HomeHeader key={index}
                                                         establishmentName={value.establishmentName}
                                                         price={value.price}
-
                                                     />
                                                 }) :
                                                 <div className=' [ d-flex justify-content-center col-md-3 ] '>
@@ -90,6 +89,9 @@ export default function Home() {
                                     </>
                             }
                         </ul>
+                        <div className=" [ d-flex jc-center ] ">
+                        <Link to="/allHotels" className=" [ btn header-search-dropdown-btn ] ">Se all hotels</Link>
+                        </div>
                     </div>
                 </div>
             </div>

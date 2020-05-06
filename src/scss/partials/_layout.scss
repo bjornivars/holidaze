@@ -5,13 +5,19 @@ body{
     margin: 0;
     box-sizing: border-box;
 }
-
+ul{
+    padding: 0;
+}
 h1{
     font-family: "Proza Libre";
 }
 h2{
     font-family: "Proza Libre";
     font-size: 30px;
+}
+h3{
+    font-family: "Proza Libre";
+    font-size: 25px;
 }
 
 p{
@@ -22,6 +28,9 @@ p{
 .m-auto{
     margin: auto;
 }
+.m-0{
+    margin: 0;
+}
 
 .d-block{
     display: block;
@@ -31,6 +40,7 @@ p{
     display: none;
 }
 
+
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ FLEX STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .d-flex{
@@ -39,13 +49,18 @@ p{
 .jc-between{
     justify-content: space-between;
 }
+.jc-center{
+    justify-content: center;
+}
 
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ COLOR STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .white{
     color: $white;
 }
-
+.orange{
+    color: $icon-orange;
+}
 
 // Desktop
 @media screen and (min-width: 992px) {

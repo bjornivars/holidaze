@@ -42,17 +42,42 @@
                 }
             }
             &-dropdown{
+
+                box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
                 background-color: $white;
                 margin-left: 25%;
                 padding-top: 2em;
+                padding-bottom: 3em;
                 position: relative;
                 z-index: 1;
                 &-ul{
                     margin: 0;
                     list-style-type: none;
+                    padding: 0;
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                    padding-left: 1em;
+                    &:hover{
+                        background-color: $lightgray;
+                    }
+                    &-text{
+                        margin-left: 20px;
+
+                    }
                 }
             }
         }
+    }
+    .searchUl{
+        padding-bottom: 2em;
+    }
+    .searchResult{
+        font-size: 20px;
+    }
+    .fa-h-square{
+        font-size: 40px;
+        margin-top: auto;
+        margin-bottom: auto;
     }
     .promotion{
         position: absolute;

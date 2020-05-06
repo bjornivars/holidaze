@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const HomeHeader = ({ establishmentName, price }) => {
@@ -8,8 +8,13 @@ const HomeHeader = ({ establishmentName, price }) => {
 
             <div className=" [ header-search-dropdown-ul ] ">
                 <Link to="/">
-                    <h3>{establishmentName}</h3>
-                    <p>${price}</p>
+                    <div className=" [ d-flex  ] ">
+                    <i className=" [ fa fa-h-square ] "></i>
+                    <div className=" [ header-search-dropdown-ul-text ] ">
+                        <h3 className=" [ m-0 searchResult ] ">{establishmentName}</h3>
+                        <p  className=" [ m-0 orange ] ">${price} per night</p>
+                        </div>
+                    </div>
                 </Link></div>
             {/*             <div className=" [ header ] ">
                 <h1 className=" [ header-text ] ">Which hotel would you like to visit?</h1>
