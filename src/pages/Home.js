@@ -66,6 +66,7 @@ export default function Home() {
                                                     return <HomeHeader key={index}
                                                         establishmentName={value.establishmentName}
                                                         price={value.price}
+                                                        id={value.id}
                                                     />
                                                 }) :
                                                 <div className=' [ d-flex justify-content-center col-md-3 ] '>
@@ -74,12 +75,13 @@ export default function Home() {
                                         }
                                     </> : <> {
                                         (searchReturned !== undefined) ?
-                                            searchReturned.map((value, index) => {
+                                            searchReturned.slice(0, 10).map((value, index) => {
                                                 let img;
                                                 value.hasOwnProperty('imageUrl') ? img = value.imageUrl : img = 'https://via.placeholder.com/150'
                                                 return <HomeHeader key={index}
                                                     establishmentName={value.establishmentName}
                                                     price={value.price}
+                                                    id={value.id}
                                                 />
                                             }) :
                                             <div className=' [ d-flex justify-content-center col-md-3 ] '>

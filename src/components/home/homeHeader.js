@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const HomeHeader = ({ establishmentName, price }) => {
+const HomeHeader = ({ establishmentName, price, id }) => {
     return (
         <div>
 
             <div className=" [ header-search-dropdown-ul ] ">
-                <Link to="/">
+                <Link to={`/hotel-specific/${id}`}>
                     <div className=" [ d-flex  ] ">
                     <i className=" [ fa fa-h-square ] "></i>
                     <div className=" [ header-search-dropdown-ul-text ] ">
