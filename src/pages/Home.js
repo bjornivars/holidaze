@@ -41,7 +41,7 @@ export default function Home() {
     return (
         <div className=' [  ] '>
             <div>
-                <div className=" [ header ] "  onClick={(showDropdown === true && isSearched === false) ? closeDropdown : 0 }>
+                <div className=" [ header ] " onClick={(showDropdown === true && isSearched === false) ? closeDropdown : 0}>
                     <h1 className=" [ header-text ] ">Which hotel would you like to visit?</h1>
                     <div className=" [ header-search col-6 m-auto ] ">
                         <input
@@ -92,7 +92,7 @@ export default function Home() {
                             }
                         </ul>
                         <div className=" [ d-flex jc-center ] ">
-                        <Link to="/allHotels" className=" [ btn header-search-dropdown-btn ] ">Se all hotels</Link>
+                            <Link to="/allHotels" className=" [ btn header-search-dropdown-btn ] ">Se all hotels</Link>
                         </div>
                     </div>
                 </div>
