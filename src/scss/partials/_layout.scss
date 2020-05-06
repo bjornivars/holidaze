@@ -9,6 +9,34 @@ body{
 h1{
     font-family: "Proza Libre";
 }
+h2{
+    font-family: "Proza Libre";
+    font-size: 30px;
+}
+
+p{
+    font-family: "Open Sans";
+}
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ PLACEMENT STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+.m-auto{
+    margin: auto;
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ FLEX STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+.d-flex{
+    display: flex;
+}
+.jc-between{
+    justify-content: space-between;
+}
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ COLOR STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.white{
+    color: $white;
+}
 
 
 // Desktop

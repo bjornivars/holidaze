@@ -1,0 +1,22 @@
+.btn{
+    background-color: $btn-bg;
+    color: $white;
+    &:hover{
+        background-color: $btn-bg-hover;
+    }
+}
+// Desktop
+@media screen and (min-width: 992px) {
+    .btn{
+        padding: .75em 2.5em .75em 2.5em
+    }
+}    
+
+// Tablet
+@media screen and (max-width: 991px) {
+
+}
+// MOBILE DEVICES
+@media screen and (max-width: 768px) {
+
+}

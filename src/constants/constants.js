@@ -1,0 +1,1 @@
+export const GET_ESTABLISHMENTS = "http://localhost/holidaze/get-establishments.php";
