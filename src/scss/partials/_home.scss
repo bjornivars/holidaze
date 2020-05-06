@@ -8,7 +8,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        min-height: 40em;
+        min-height: 45em;
         max-height: 70vh;
         &-text{
             color: white;
@@ -44,6 +44,9 @@
             &-dropdown{
                 background-color: $white;
                 margin-left: 25%;
+                padding-top: 2em;
+                position: relative;
+                z-index: 1;
                 &-ul{
                     margin: 0;
                     list-style-type: none;

@@ -11,7 +11,14 @@ export default function Home() {
     const [establishmentNine, setEstablishmentNine] = useState("no data");
     const [isSearched, setIsSearched] = useState(false);
     const [searchReturned, setSearchReturned] = useState([]);
+    const [showDropdown, setshowDropdown] = useState(false);
 
+    const openDropdown = () => {
+        setshowDropdown(true);
+    }
+    const closeDropdown = () => {
+        setshowDropdown(false);
+    }
     useEffect(() => {
         axios.get(GET_ESTABLISHMENTS)
             .then((result) => {
@@ -38,15 +45,17 @@ export default function Home() {
                     <h1 className=" [ header-text ] ">Which hotel would you like to visit?</h1>
                     <div className=" [ header-search col-6 m-auto ] ">
                         <input
+                            autocomplete="off"
                             className=" [ header-search-input col-10 ] "
                             type="search"
                             name="search"
                             placeholder="E.g Sunset"
                             onChange={handleFiltering}
+                            onClick={(showDropdown !== true) ? openDropdown : closeDropdown}
                         />
                         <button type="submit" className=" [ header-search-btn col-2 ] ">Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></button>
                     </div>
-                    <div className=" [ header-search-dropdown col-5 ] ">
+                    <div className={(showDropdown !== true) ? ' [ d-none ] ' : ' [ d-block header-search-dropdown col-5 ] '}>
                         <ul className=" [ header-search-dropdown-ul col-10 m-auto ] ">
                             {
                                 (!isSearched) ?
@@ -80,7 +89,6 @@ export default function Home() {
                                     }
                                     </>
                             }
-                            <li className=" [ header-search-dropdown-ul ] "><Link to="/">Test</Link></li>
                         </ul>
                     </div>
                 </div>
