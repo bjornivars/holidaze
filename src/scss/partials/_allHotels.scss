@@ -1,0 +1,48 @@
+// General styles
+
+
+// Desktop
+@media screen and (min-width: 992px) {
+    .hotel-card{
+        margin: 1em;
+        box-shadow: 0 10px 16px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.1);
+        &:hover{
+            box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+        }
+        &-img{
+            min-height: 10em;
+            max-height: 10em;
+            min-width: 1em;
+        }
+        &-text{
+            padding: 0px 15px 15px 15px;
+            &-h2{
+                font-size: 25px;
+                white-space: nowrap; 
+                width: 100%; 
+                overflow: hidden;
+                text-overflow: ellipsis; 
+            }
+            &-p{
+                white-space: nowrap; 
+                width: 100%; 
+                overflow: hidden;
+                text-overflow: ellipsis; 
+            }
+            &-price{
+                color: $icon-orange;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+// Tablet
+@media screen and (max-width: 991px) {
+
+}
+// MOBILE DEVICES
+@media screen and (max-width: 768px) {
+
+}

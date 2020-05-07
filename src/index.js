@@ -9,7 +9,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import Home from './pages/Home';
-
+import AllHotels from './pages/AllHotels';
+import HotelSpecific from './pages/HotelSpecific';
 
 ReactDOM.render(
   <Router>
@@ -17,12 +18,13 @@ ReactDOM.render(
       {/* <ScrollToTop /> */}
       <Switch>
         <Route path='/' exact component={Home} />
-       {/*  <Route path='/work' exact component={Work} />
-        <Route path='/cv' exact component={Cv} />
+        <Route path='/allHotels' exact component={AllHotels} />
+        <Route path='/hotelSpecific/:id/' exact component={HotelSpecific} /> }
+
+        {/* <Route path='/cv' exact component={Cv} />
         <Route path='/contact' exact component={Contact} />
         <Route path='/about' exact component={About} />
-        <Route path='/workSpecific/:name/' exact component={WorkSpecific} /> */}
-      </Switch>
+       */}</Switch>
     </App>
   </Router>,
   document.getElementById('root')

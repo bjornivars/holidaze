@@ -76,8 +76,6 @@ export default function Home() {
                                     </> : <> {
                                         (searchReturned !== undefined) ?
                                             searchReturned.slice(0, 10).map((value, index) => {
-                                                let img;
-                                                value.hasOwnProperty('imageUrl') ? img = value.imageUrl : img = 'https://via.placeholder.com/150'
                                                 return <HomeHeader key={index}
                                                     establishmentName={value.establishmentName}
                                                     price={value.price}

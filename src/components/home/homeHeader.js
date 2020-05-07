@@ -7,7 +7,7 @@ const HomeHeader = ({ establishmentName, price, id }) => {
         <div>
 
             <div className=" [ header-search-dropdown-ul ] ">
-                <Link to={`/hotel-specific/${id}`}>
+                <Link to={`/hotel-specific/${id}`} className=" [ header-search-dropdown-ul-link ] ">
                     <div className=" [ d-flex  ] ">
                         <i className=" [ fa fa-h-square ] "></i>
                         <div className=" [ header-search-dropdown-ul-text ] ">

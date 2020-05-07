@@ -23,6 +23,9 @@ h3{
 p{
     font-family: "Open Sans";
 }
+a{
+    color: $black;
+}
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ PLACEMENT STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .m-auto{
@@ -40,11 +43,16 @@ p{
     display: none;
 }
 
-
+.text-center{
+    text-align: center;
+}
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ FLEX STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .d-flex{
     display: flex;
+}
+.flex-wrap{
+    flex-wrap: wrap;
 }
 .jc-between{
     justify-content: space-between;
@@ -60,6 +68,24 @@ p{
 }
 .orange{
     color: $icon-orange;
+}
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ICON STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+.fa-h-square{
+    font-size: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: $icon-gray;
+}
+
+.fa-users{
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    color: $icon-gray;
 }
 
 // Desktop
