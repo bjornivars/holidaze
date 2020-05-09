@@ -3,32 +3,34 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import HotelClick from './../components/hotelSpecific';
-import { GET_ESTABLISHMENT_SPECIFIC } from './../constants/constants';
+import { GET_ESTABLISHMENT_SPECIFIC, GET_ESTABLISHMENTS } from './../constants/constants';
 
-export default function HotelSpecific() {
+export default function HotelSpecific(){
     let { id } = useParams();
     const [hotelResult, setHotelResult] = useState(undefined);
 
     useEffect(() => {
-        axios.get(GET_ESTABLISHMENT_SPECIFIC)
+        axios.get(GET_ESTABLISHMENTS)
             .then((result) => {
-                setHotelResult(result.data);
+                setHotelResult(result.data[id]);
             })
     }, [id])
 
-    console.log(id)
+    console.log(hotelResult)
+    console.log({id})
     return (
         <div>
             <div className=' [ container mb-5 ] '>
                 <div className=' [ row ] '>
                     <div className=' [ col-md-12 ] '>
-                        <h1 className=' [ heading ] '>Some hotel</h1>
+
                     </div>
                     <div className=' [ col-md-12 ] '>
                         {
                             (hotelResult !== undefined) ?
                                 <HotelClick
                                     establishmentName={hotelResult.establishmentName} 
+                                    imageUrl ={hotelResult.imageUrl}
                                     id={hotelResult.id} 
                                     price={hotelResult.price} 
                                     description={hotelResult.description} 
@@ -44,9 +46,9 @@ export default function HotelSpecific() {
                         }
                     </div>
                 </div>
-                <div className=' [ d-flex justify-content-center mt-5 ] '>
+{/*                 <div className=' [ d-flex justify-content-center mt-5 ] '>
                     <button className=' [ btn btn-primary ] '><Link to='/' className=' [ btn-primary-a ] '>{'Back to Homepage'}</Link></button>
-                </div>
+                </div> */}
             </div>
         </div>
     )

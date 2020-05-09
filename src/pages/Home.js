@@ -45,7 +45,7 @@ export default function Home() {
                     <h1 className=" [ header-text ] ">Which hotel would you like to visit?</h1>
                     <div className=" [ header-search col-6 m-auto ] ">
                         <input
-                            autocomplete="off"
+                            autoComplete="off"
                             className=" [ header-search-input col-10 ] "
                             type="search"
                             name="search"

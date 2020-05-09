@@ -14,10 +14,12 @@ h1{
 h2{
     font-family: "Proza Libre";
     font-size: 30px;
+    margin-top: 0;
 }
 h3{
     font-family: "Proza Libre";
     font-size: 25px;
+    margin-top: 0;
 }
 
 p{
@@ -80,7 +82,7 @@ a{
     color: $icon-gray;
 }
 
-.fa-users{
+.icon-grey{
     font-size: 20px;
     margin-top: auto;
     margin-bottom: auto;
