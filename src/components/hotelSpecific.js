@@ -12,7 +12,7 @@ const HotelClick = ({ imageUrl,
     googleLat,
     googleLong,
     selfCatering,
-    openModal
+    showModal
 }) => {
     return (
         <div>
@@ -53,7 +53,7 @@ const HotelClick = ({ imageUrl,
                         </div>
                     </div>
                     <div className=" [  col-12 d-flex jc-center ] ">
-                        <button className=" [ btn bookingBtn ] " onClick={openModal}>Book for ${price} per night</button>
+                        <button className=" [ btn bookingBtn ] " onClick={showModal}>Book for ${price} per night</button>
                     </div>
                 </div>
 

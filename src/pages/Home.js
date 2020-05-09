@@ -29,6 +29,9 @@ export default function Home() {
     //console.log(establishmentNine.imageUrl);
     // http://localhost/holidaze/get-establishments.php
 
+    const doNada = () => {
+
+    }
 
     const handleFiltering = (input) => {
         setIsSearched(true)
@@ -37,11 +40,16 @@ export default function Home() {
         })
         setSearchReturned(setFilteredSearch);
     }
+
+    const onSearch = () => {
+        sessionStorage.clear();
+        sessionStorage.setItem("searched" , searchReturned[0].establishmentName)
+    }
     console.log("searchReturned = ", searchReturned);
     return (
         <div className=' [  ] '>
             <div>
-                <div className=" [ header ] " onClick={(showDropdown === true && isSearched === false) ? closeDropdown : 0}>
+                <div className=" [ header ] " onClick={(showDropdown === true && isSearched === false) ? closeDropdown : doNada}>
                     <h1 className=" [ header-text ] ">Which hotel would you like to visit?</h1>
                     <div className=" [ header-search col-6 m-auto ] ">
                         <input
@@ -53,7 +61,7 @@ export default function Home() {
                             onChange={handleFiltering}
                             onClick={(showDropdown !== true && isSearched === false) ? openDropdown : closeDropdown}
                         />
-                        <button type="submit" className=" [ header-search-btn col-2 ] ">Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></button>
+                        <Link to={`/allHotels`} className=" [ header-search-btn col-2 ] " onClick={onSearch}>Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></Link>
                     </div>
                     <div className={(showDropdown !== true && isSearched === false) ? ' [ d-none ] ' : ' [ d-block header-search-dropdown col-5 ] '}>
                         <ul className=" [ searchUl col-12 m-auto ] ">
