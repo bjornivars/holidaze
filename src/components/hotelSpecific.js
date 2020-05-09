@@ -29,25 +29,25 @@ const HotelClick = ({ imageUrl,
                     <div className=" [ specific-details-icons col-10 m-auto d-flex jc-between ] ">
                         <div className=" [ specific-details-icons-box d-block col-3 ] ">
                             <div className=" [ orangBox ] ">
-                                <i className="fa fa-coffee"></i>
+                                <i className=" [ fa fa-coffee ] "></i>
                             </div>
                             <p className=" [ text-center ] ">Breakfast included ({selfCatering})</p>
                         </div>
                         <div className=" [ specific-details-icons-box d-block col-3 ] ">
                             <div className=" [ orangBox ] ">
-                                <i className="fa fa-users"></i>
+                                <i className=" [ fa fa-users ] "></i>
                             </div>
                             <p className=" [ text-center ] ">Max {maxGuests} guests</p>
                         </div>
                         <div className=" [ specific-details-icons-box d-block col-3 ] ">
                             <div className=" [ orangBox ] ">
-                                <i className="fa fa-envelope"></i>
+                                <i className=" [ fa fa-envelope ] "></i>
                             </div>
                             <p className=" [ text-center ] ">{establishmentEmail}</p>
                         </div>
                         <div className=" [ specific-details-icons-box d-block col-3 ] ">
                             <div className=" [ orangBox ] ">
-                                <i className="fa fa-map-marker"></i>
+                                <i className=" [ fa fa-map-marker ] "></i>
                             </div>
                             <p className=" [ text-center ] ">{googleLat} , {googleLong} </p>
                         </div>

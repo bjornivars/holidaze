@@ -12,7 +12,7 @@ const AllHotelsCard = ({ imageUrl, establishmentName, id, price, description, ma
                     <p className=" [ hotel-card-text-p ] ">{description}</p>
                     <div className=" [ d-flex jc-between ] ">
                         <div className=" [ icon-grey ] ">
-                            <i className="fa fa-users"></i><span>{maxGuests}</span>
+                            <i className=" [ fa fa-users ] "></i><span>{maxGuests}</span>
                         </div>
                         <div>
                             <span className=" [ hotel-card-text-price ] ">${price}</span>
