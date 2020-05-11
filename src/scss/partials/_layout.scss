@@ -28,6 +28,9 @@ p{
 a{
     color: $black;
 }
+input{
+    background-color: $lightgray;
+}
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ PLACEMENT STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .m-auto{
@@ -61,6 +64,9 @@ a{
 }
 .jc-center{
     justify-content: center;
+}
+.jc-end{
+    justify-content: flex-end;
 }
 
 
