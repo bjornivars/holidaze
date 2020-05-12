@@ -1,9 +1,8 @@
 import { useParams } from "react-router";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import HotelClick from './../components/hotelSpecific';
-import { GET_ESTABLISHMENT_SPECIFIC, GET_ESTABLISHMENTS } from './../constants/constants';
+import { GET_ESTABLISHMENTS } from './../constants/constants';
 import Modal from './../components/testModal';
 import ModalSuccess from './../components/testModalSuccess';
 

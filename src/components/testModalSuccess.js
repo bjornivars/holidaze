@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 //import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks';
 
 const ModalSuccess = ({ establishmentName,
