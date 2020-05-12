@@ -15,7 +15,7 @@ const Modal = ({ establishmentName,
                 </div>
                     <h1 className=" [ modal-box-h1 text-center ] ">{establishmentName}</h1>
                     <div className=" [ modal-box-form ] ">
-                        <form method="POST" action="enquiry-success.php" className=" [ enquiry-form col-10 m-auto ] ">
+                        <form method="POST" action="http://localhost/holidaze/enquiry-success.php" className=" [ enquiry-form col-10 m-auto ] ">
                             {/*   <!-- The name of establishment gets sent with the form so that only one JSON file is kept for all establishments.
                             This value must be updated for each establishment. --> */}
                             <label for="establishment">Establishment</label>
