@@ -1,4 +1,4 @@
-import React, { useState  } from 'react'
+import React, { useState } from 'react'
 //import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks';
 
 import axios from 'axios';
@@ -10,15 +10,16 @@ const Modal = ({ establishmentName,
     showSuccess,
 }) => {
 
-    const [ClientName, setClientName] = useState('');
-    const [Email, setEmail] = useState('');
-    const [Checkin, setCheckin] = useState('');
-    const [Checkout, setCheckout] = useState('');
+    let openNew = showSuccess;
+    const [clientNameValue, setClientNameValue] = useState('');
+    const [emailValue, setEmailValue] = useState('');
+    const [checkinValue, setCheckinValue] = useState('');
+    const [checkoutValue, setCheckoutValue] = useState('');
 
-    const [clientNameError, setClientNameError] = useState(true);
-    const [emailError, setEmailError] = useState(true);
-    const [checkinError, setCheckinError] = useState(true);
-    const [checkoutError, setCheckoutError] = useState(true);
+    const [clientNameValueError, setClientNameValueError] = useState(true);
+    const [emailValueError, setEmailValueError] = useState(true);
+    const [checkinValueError, setCheckinValueError] = useState(true);
+    const [checkoutValueError, setCheckoutValueError] = useState(true);
 
     const [correctlySent, setcorrectlySent] = useState(false);
 
@@ -30,20 +31,20 @@ const Modal = ({ establishmentName,
 
         switch (name) {
             case 'clientName':
-                (value !== '') ? setClientNameError(false) : setClientNameError(true);
-                setClientName(value);
+                (value !== '') ? setClientNameValueError(false) : setClientNameValueError(true);
+                setClientNameValue(value);
                 break;
             case 'email':
-                (emailPattern.test(value)) ? setEmailError(false) : setEmailError(true);
-                setEmail(value);
+                (emailPattern.test(value)) ? setEmailValueError(false) : setEmailValueError(true);
+                setEmailValue(value);
                 break;
             case 'checkin':
-                (value !== '') ? setCheckinError(false) : setCheckinError(true);
-                setCheckin(value);
+                (value !== '') ? setCheckinValueError(false) : setCheckinValueError(true);
+                setCheckinValue(value);
                 break;
             case 'checkout':
-                (value !== '') ? setCheckoutError(false) : setCheckoutError(true);
-                setCheckout(value);
+                (value !== '') ? setCheckoutValueError(false) : setCheckoutValueError(true);
+                setCheckoutValue(value);
                 break;
             default:
                 break;
@@ -52,25 +53,26 @@ const Modal = ({ establishmentName,
     }
     let handleSubmit = (event) => {
         event.preventDefault();
-        if (!clientNameError || !emailError || !checkinError || !checkoutError) {
-            /*           sessionStorage.setItem('establishment', establishmentName)
-                      sessionStorage.setItem('clientName', clientName)
-                      sessionStorage.setItem('email', email)
-                      sessionStorage.setItem('checkin', checkin)
-                      sessionStorage.setItem('checkout', checkout)
-           */
+        if (!clientNameValueError || !emailValueError || !checkinValueError || !checkoutValueError) {
+            sessionStorage.setItem('establishment', establishmentName)
+            sessionStorage.setItem('clientName', clientNameValue)
+            sessionStorage.setItem('email', emailValue)
+            sessionStorage.setItem('checkin', checkinValue)
+            sessionStorage.setItem('checkout', checkoutValue)
+
             var data = new FormData();
             data.append("establishment", establishmentName);
-            data.append("clientName", ClientName);
-            data.append("email", Email);
-            data.append("checkin", Checkin);
-            data.append("checkout", Checkout);
+            data.append("clientName", clientNameValue);
+            data.append("email", emailValue);
+            data.append("checkin", checkinValue);
+            data.append("checkout", checkoutValue);
 
             axios.post('http://localhost/holidaze/enquiry-success.php', data)
                 .then(response => {
                     console.log(response)
                     console.log(response.data)
                     this.filter = response.data
+
                 })
                 .catch(e => {
                     console.log("")
@@ -83,7 +85,7 @@ const Modal = ({ establishmentName,
             console.log("NOT sent");
         }
     }
-    
+
     return (
         <div className=" [ modal ] ">
             <div className=" [ modal-overlay ] ">
@@ -91,10 +93,10 @@ const Modal = ({ establishmentName,
                     <div className=" [ d-flex jc-end ] ">
                         <i onClick={closeModal} className=" [ fa fa-times-circle closeModal ] "></i>
                     </div>
-                    <h1 className=" [ modal-box-h1 text-center ] ">{establishmentName}</h1>
-                    <div className=" [ modal-box-form ] ">
+                    <h1 className={correctlySent !== true ? " [ modal-box-h1 text-center ] " : " [ d-none ] "}>{establishmentName}</h1>
+                    <div className={correctlySent !== true ? " [ modal-box-form ] " : " [ d-none ] "}>
                         <form /* method="POST" action="http://localhost/holidaze/enquiry-success.phhhhhhp" */ onSubmit={handleSubmit} className=" [ enquiry-form col-10 m-auto ] ">
-                            {/*   <!-- The name of establishment gets sent with the form so that only one JSON file is kept for all establishments.
+                            {/*   <!-- The name of establishment gets sent with the form so that only one JSON file is kept for all establishments
                             This value must be updated for each establishment. --> */}
                             <label htmlFor="establishment">Establishment</label>
                             <br />
@@ -117,7 +119,7 @@ const Modal = ({ establishmentName,
                                 id="clientName"
                                 className=" [ form-input col-12 ] " />
                             <br />
-                            <p className={(clientNameError) ? ' [ errorMessage ] ' : ' [ d-none ] '}>Please enter your name</p>
+                            <p className={(clientNameValueError) ? ' [ errorMessage ] ' : ' [ d-none ] '}>Please enter your name</p>
                             <br />
                             <label htmlFor="email">Email Address</label>
                             <br />
@@ -128,7 +130,7 @@ const Modal = ({ establishmentName,
                                 onChange={handleChange}
                                 className=" [ form-input col-12 ] " />
                             <br />
-                            <p className={(emailError) ? ' [ errorMessage ] ' : ' [ d-none ] '}>Please enter a valid email</p>
+                            <p className={(emailValueError) ? ' [ errorMessage ] ' : ' [ d-none ] '}>Please enter a valid email</p>
                             <br />
                             <div className=" [ form-input-dflex ] ">
                                 <div className=" [ col-5 ] ">
@@ -141,7 +143,7 @@ const Modal = ({ establishmentName,
                                         onChange={handleChange}
                                         className=" [ form-input col-12 ] " />
                                     <br />
-                                    <p className={(checkinError) ? ' [ errorMessage ] ' : ' [ d-none ] '}>Please insert a valid date</p>
+                                    <p className={(checkinValueError) ? ' [ errorMessage ] ' : ' [ d-none ] '}>Please insert a valid date</p>
                                 </div>
                                 <div className=" [ col-5 ] ">
                                     <label htmlFor="checkout" className=" [ col-12 ] ">Check-out</label>
@@ -152,14 +154,25 @@ const Modal = ({ establishmentName,
                                         id="checkout"
                                         onChange={handleChange}
                                         className=" [ form-input col-12 ] " />
-                                    <p className={(checkoutError) ? ' [ errorMessage ] ' : ' [ d-none ] '}>Please insert a valid date</p>
+                                    <p className={(checkoutValueError) ? ' [ errorMessage ] ' : ' [ d-none ] '}>Please insert a valid date</p>
                                 </div>
                             </div>
                             <br />
                             <p>{correctlySent}</p>
                             <br />
-                            <input type="submit" className=" [ btn ] " disabled={clientNameError || emailError || checkinError || checkoutError || correctlySent} />
+                            <input type="submit" className=" [ btn ] " disabled={clientNameValueError || emailValueError || checkinValueError || checkoutValueError || correctlySent} />
                         </form>
+                    </div>
+                    <div className={correctlySent ? " [ modal-box-success ] " : " [ d-none ] "}>
+                    <h1 className=" [ modal-box-h1 text-center ] " >Thank you for booking <br></br>{establishmentName}</h1>
+                            <div className=" [ col-6 m-auto ] ">
+                                <p><b>Name: </b> {clientNameValue}</p>
+                                <p><b>Email: </b> {emailValue}</p>
+                                <p><b>Checkin: </b> {checkinValue}</p>
+                                <p><b>Checkout: </b> {checkoutValue}</p>
+                                <button className=" [ btn ] " onClick={closeModal}>Close</button>
+
+                            </div>
                     </div>
                 </div>
             </div>
