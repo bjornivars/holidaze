@@ -4,14 +4,12 @@ import axios from 'axios';
 import HotelClick from './../components/hotelSpecific';
 import { GET_ESTABLISHMENTS } from './../constants/constants';
 import Modal from './../components/testModal';
-import ModalSuccess from './../components/testModalSuccess';
 
 
 export default function HotelSpecific() {
     let { id } = useParams();
     const [hotelResult, setHotelResult] = useState(undefined);
     const [openModal, setOpenModal] = useState(false);
-    const [modalSuccess, setModalSuccess] = useState(false);
 
     useEffect(() => {
         axios.get(GET_ESTABLISHMENTS)
@@ -20,38 +18,23 @@ export default function HotelSpecific() {
             })
     }, [id])
 
-/*     console.log(hotelResult)
-    console.log({ id }); */
+    /*     console.log(hotelResult)
+        console.log({ id }); */
 
 
     const showModalss = (e) => {
-        setOpenModal(true);   
+        setOpenModal(true);
     }
     const closeModalss = () => {
         setOpenModal(false);
     }
-    const openSuccessModal = (e) => {
-        setOpenModal(false);
-        setModalSuccess(true);
-        e.preventDefault();  
-    }
-    const closeSuccessModal = (e) => {
-        setModalSuccess(false); 
-    }
+
     return (
         <div>
             {openModal && <Modal
                 establishmentName={hotelResult.establishmentName}
                 closeModal={closeModalss}
-                showSuccess={openSuccessModal}
             />}
-            {
-          
-            modalSuccess && <ModalSuccess
-                establishmentName={hotelResult.establishmentName}
-                closeSuccessModal={closeSuccessModal}
-            />}
-
             <div className=' [ container mb-5 ] '>
 
                 <div className=' [ row ] '>

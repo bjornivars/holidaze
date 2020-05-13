@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 //import {useDatepicker, useMonth, useDay} from '@datepicker-react/hooks';
 
 import axios from 'axios';
-
+import {POST_ENQUIRY} from './../constants/constants';
 
 
 const Modal = ({ establishmentName,
@@ -10,7 +10,6 @@ const Modal = ({ establishmentName,
     showSuccess,
 }) => {
 
-    let openNew = showSuccess;
     const [clientNameValue, setClientNameValue] = useState('');
     const [emailValue, setEmailValue] = useState('');
     const [checkinValue, setCheckinValue] = useState('');
@@ -67,7 +66,7 @@ const Modal = ({ establishmentName,
             data.append("checkin", checkinValue);
             data.append("checkout", checkoutValue);
 
-            axios.post('http://localhost/holidaze/enquiry-success.php', data)
+            axios.post(POST_ENQUIRY, data)
                 .then(response => {
                     console.log(response)
                     console.log(response.data)
@@ -164,15 +163,14 @@ const Modal = ({ establishmentName,
                         </form>
                     </div>
                     <div className={correctlySent ? " [ modal-box-success ] " : " [ d-none ] "}>
-                    <h1 className=" [ modal-box-h1 text-center ] " >Thank you for booking <br></br>{establishmentName}</h1>
-                            <div className=" [ col-6 m-auto ] ">
-                                <p><b>Name: </b> {clientNameValue}</p>
-                                <p><b>Email: </b> {emailValue}</p>
-                                <p><b>Checkin: </b> {checkinValue}</p>
-                                <p><b>Checkout: </b> {checkoutValue}</p>
-                                <button className=" [ btn ] " onClick={closeModal}>Close</button>
-
-                            </div>
+                        <h1 className=" [ modal-box-h1 text-center ] " >Thank you for booking <br></br>{establishmentName}</h1>
+                        <div className=" [ col-6 m-auto ] ">
+                            <p><b>Name: </b> {clientNameValue}</p>
+                            <p><b>Email: </b> {emailValue}</p>
+                            <p><b>Checkin: </b> {checkinValue}</p>
+                            <p><b>Checkout: </b> {checkoutValue}</p>
+                            <button className=" [ btn ] " onClick={closeModal}>Close</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@ import * as serviceWorker from './serviceWorker';
 import Home from './pages/Home';
 import AllHotels from './pages/AllHotels';
 import HotelSpecific from './pages/HotelSpecific';
+import Contact from './pages/Contact';
 
 ReactDOM.render(
   <Router>
@@ -20,9 +21,9 @@ ReactDOM.render(
         <Route path='/' exact component={Home} />
         <Route path='/allHotels' exact component={AllHotels} />
         <Route path='/hotelSpecific/:id/' exact component={HotelSpecific} /> }
-
-        {/* <Route path='/cv' exact component={Cv} />
         <Route path='/contact' exact component={Contact} />
+        {/* <Route path='/cv' exact component={Cv} />
+
         <Route path='/about' exact component={About} />
        */}</Switch>
     </App>
