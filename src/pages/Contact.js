@@ -1,46 +1,136 @@
 
-import React, { useState, useEffect } from 'react';
+
+
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
+export default function Contact() {
+  const { register, handleSubmit, errors } = useForm();
+ 
+
+ 
+  const onSubmit = (data) => {
+      console.log(data);
+      const form = new FormData()
+      form.append('clientName', data.clientName);
+      form.append('email', data.email);
+      form.append('message', data.message);
+      axios.post('http://localhost/holidaze/contact-success.php', form, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+  }
+  console.log(errors);
+  
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}  >
+      <input 
+      type="text" 
+      placeholder="clientName" 
+      name="clientName" 
+      ref={register({required: true, maxLength: 40})} 
+      />
+    {errors.clientName && <p>Name is required</p>}
+
+      <input 
+      type="text" 
+      placeholder="email" 
+      name="email" 
+      ref={register({required: true, pattern: /^\S+@\S+$/i})} 
+      />
+    {errors.email && <p>Email is required</p>}
+
+      <textarea 
+      name="message" 
+      ref={register} 
+      />
+    {errors.message && <p>Message is required</p>}
+
+      <input type="submit" />
+    </form>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import React from 'react';
+import { useForm } from 'react-hook-form';
 
 export default function Contact() {
-    return (
-        <>
-            <h1 className=" [ text-center ] ">Contact us</h1>
-            <div className=" [ col-4 m-auto  d-flex jc-between flex-wrap ] ">
-                <form method="POST" action="contact-success.php" className=" [ m-auto ] ">
-                <label for="clientName">Full name</label><br/>
-                    <div className=" [ input-container ] ">
-                    <i className="fa fa-user form-input-icon"></i>
-                    <input type="text" 
-                    name="clientName" 
-                    id="clientName" 
-                    className=" [ form-input form-input-contact col-12 ] "
-                    />
-                    </div>
-                        <label for="email">Email Address</label><br/>
-                        <div className=" [ input-container ] ">
-                        <i className="fa fa-envelope form-input-icon"></i>
-                        <input type="text" 
-                        name="email" 
-                        id="email" 
-                        className=" [ form-input form-input-contact col-12 ] "
-                        /></div>
-                            <label for="message">Message</label><br/>
-                            <div className=" [ input-container ] ">
+  const { register, handleSubmit, errors } = useForm();
+ 
+ 
+  const onSubmit = (data) => {
+      console.log(data);
 
-                            <i className="fa fa-comment form-input-icon form-input-icon-comment"></i>
-                            <textarea name="message" 
-                            id="message" 
-                            rows="8" 
-                            cols="80"
-                            className=" [ form-input form-input-contact col-12 ] "
-                            ></textarea>
-                            </div>
-                            <input type="submit" className=" [ btn ] "/>
-                </form>
-            </div>
-        </>
-    )
+      axios.post("http://localhost/holidaze/contact-success.php", data)
+      .then(
+        (data) => {
+          console.log(data.data);
+        }
+      )
+      .catch(
+        ( error) => {
+          console.log('error', data);
+        })
+    }
+  console.log(errors);
+  
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input 
+      type="text" 
+      placeholder="clientName" 
+      name="clientName" 
+      ref={register({required: true, maxLength: 40})} 
+      />
+    {errors.clientName && <p>Name is required</p>}
+
+      <input 
+      type="text" 
+      placeholder="email" 
+      name="email" 
+      ref={register({required: true, pattern: /^\S+@\S+$/i})} 
+      />
+    {errors.email && <p>Email is required</p>}
+
+      <textarea 
+      name="message" 
+      ref={register} 
+      />
+    {errors.message && <p>Message is required</p>}
+
+      <input type="submit" />
+    </form>
+  );
 }
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
