@@ -53,11 +53,6 @@ const Modal = ({ establishmentName,
     let handleSubmit = (event) => {
         event.preventDefault();
         if (!clientNameValueError || !emailValueError || !checkinValueError || !checkoutValueError) {
-            sessionStorage.setItem('establishment', establishmentName)
-            sessionStorage.setItem('clientName', clientNameValue)
-            sessionStorage.setItem('email', emailValue)
-            sessionStorage.setItem('checkin', checkinValue)
-            sessionStorage.setItem('checkout', checkoutValue)
 
             var data = new FormData();
             data.append("establishment", establishmentName);
@@ -71,7 +66,6 @@ const Modal = ({ establishmentName,
                     console.log(response)
                     console.log(response.data)
                     this.filter = response.data
-
                 })
                 .catch(e => {
                     console.log("")

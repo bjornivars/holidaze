@@ -1,7 +1,7 @@
 .form-input{
+    display: block;
     border: 1px solid $black;
-    border-left: none;
-    background-color: 1px solid $lightgray !important;
+    background-color: $lightgray;
     padding: 10px 0 10px 0;
     &-dflex{
         display: flex;
@@ -25,6 +25,7 @@
     }
     &-contact{
         padding-left: 10px;
+        border-left: none;
     }
 }
 
@@ -37,4 +38,11 @@
 
   label{
       display: block;
+  }
+
+  .errorMessage{
+      color: $error;
+  }
+  .successMessage{
+      color: green;
   }
