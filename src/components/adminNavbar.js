@@ -6,7 +6,7 @@ const AdminNavbar = (props) => {
     const logo = require('./../Assets/holidazeLogoWhite.png');
 
     function clear(){
-        localStorage.clear()
+        sessionStorage.clear()
     }
     return (
         <div className=" [ nav admin ] ">

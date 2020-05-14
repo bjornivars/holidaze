@@ -10,7 +10,7 @@ export default function HomePage(props) {
 const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function updateLogin() {
-    localStorage.setItem("isLoggedIn", true)
+    sessionStorage.setItem("isLoggedIn", true)
     setIsLoggedIn(true);
     //console.log('isLoggedIn should be true = ', isLoggedIn)
   }
@@ -18,13 +18,13 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
   function logoutUser() {
     setIsLoggedIn(false);
     // To remove login values:
-    localStorage.clear();
+    sessionStorage.clear();
     // To remove contact form values:
     sessionStorage.clear();
     //console.log('isLoggedIn should be false = ', isLoggedIn)
   }
   
-    return (localStorage.getItem('username') !== null && localStorage.getItem("isLoggedIn") === "true") ? (
+    return (sessionStorage.getItem('username') !== null && sessionStorage.getItem("isLoggedIn") === "true") ? (
         <div className='App'>
           <AdminNavbar />
 

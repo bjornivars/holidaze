@@ -20,15 +20,15 @@ export default function Login(props) {
     function handleSubmit(event) {
         event.preventDefault();
         //console.log('submit clicked');
-        localStorage.setItem("username", username);
-        localStorage.setItem("password", password);
+        sessionStorage.setItem("username", username);
+        sessionStorage.setItem("password", password);
         getLocalStorageInfo();
     }
 
     function getLocalStorageInfo() {
-        if (localStorage.getItem('username') !== 'cameron') {
+        if (sessionStorage.getItem('username') !== 'cameron') {
             setErrorMessage('Username is incorrect')
-        } else if (localStorage.getItem('password') !== 'cameron23') {
+        } else if (sessionStorage.getItem('password') !== 'cameron23') {
             setErrorMessage('Password is incorrect')
         } else {
             //console.log('updateLoginStatus updated');
@@ -37,28 +37,32 @@ export default function Login(props) {
     }
 
     return (
-        <div className=' [ container-fluid ] '>
-            <h1 className=' [ text-center mb-5 mt-5 pt-5 ] '>Login</h1>
-            <div className=' [ row m-auto ] '>
+        <div className=' [ container ] '>
+            <h1 className=' [ text-center mb-5 ] '>Login</h1>
+            <div className=' [ col-4 m-auto ] '>
                 <form onSubmit={handleSubmit} className=' [ col-md-4 m-auto ] '>
+                <label >Username</label>
+                <div className=" [ input-container ] ">
+                        <i className="fa fa-user form-input-icon"></i>
+                        <input type='text'
+                        name='username'
+                        onChange={handleChange}
+                        className=' [ form-input form-input-contact col-12 ] '
+                    />
+                    </div>
+                    
+                    <label >Password</label>
+                <div className=" [ input-container ] ">
+                <i class="fa fa-key form-input-icon "></i>                        
+                <input type='password'
+                        name='password'
+                        onChange={handleChange}
+                        className=' [ form-input form-input-contact col-12 ] '
+                    />
+                    </div>
                     {
                         errorMessage !== undefined && <div><p className=' [ errorMessage ] '>{errorMessage}</p></div>
                     }
-                    <p>Enter a username</p>
-                    <input type='text'
-                        name='username'
-                        onChange={handleChange}
-                        className=' [ form-control ] '
-                    />
-                    <br />
-                    <p></p>
-                    <p>Enter a password</p>
-                    <input type='password'
-                        name='password'
-                        onChange={handleChange}
-                        className=' [ form-control ] '
-                    />
-                    <br />
                     <input type='submit' className=' [ btn ] ' />
                 </form>
             </div>
