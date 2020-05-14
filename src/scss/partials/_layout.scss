@@ -96,11 +96,38 @@ input{
     color: $icon-gray;
 }
 
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ MESSAGE STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .errorMessage{
     color: red;
 }
 
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ OTHER STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.container{
+    margin-top: 10em;
+}
+.copyright{
+    color: $white;
+    padding-bottom: 2em;
+    text-align: center;
+}
+.largeBox{
+    background-color: $admin-blue;
+    color: $white;
+
+    &-text{
+        padding-top: 3em;
+        padding-bottom: 3em;
+        color: $white;
+        text-align: center;
+    }
+    &-container{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+}
 // Desktop
 @media screen and (min-width: 992px) {
 

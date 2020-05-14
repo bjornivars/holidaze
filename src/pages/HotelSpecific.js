@@ -1,6 +1,9 @@
 import { useParams } from "react-router";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from './../components/navbar';
+import Footer from './../components/footer';
+
 import HotelClick from './../components/hotelSpecific';
 import { GET_ESTABLISHMENTS } from './../constants/constants';
 import Modal from './../components/testModal';
@@ -30,12 +33,14 @@ export default function HotelSpecific() {
     }
 
     return (
+        <>
+        <Navbar />
         <div>
             {openModal && <Modal
                 establishmentName={hotelResult.establishmentName}
                 closeModal={closeModalss}
             />}
-            <div className=' [ container mb-5 ] '>
+            <div className=' [ mb-5 ] '>
 
                 <div className=' [ row ] '>
                     <div className=' [ col-md-12 ] '>
@@ -68,5 +73,7 @@ export default function HotelSpecific() {
                 </div> */}
             </div>
         </div>
+        <Footer />
+        </>
     )
 }

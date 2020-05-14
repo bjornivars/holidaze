@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from './../components/navbar';
+import Footer from './../components/footer';
+
 import HomeHeader from '../components/home/homeHeader';
 import PromotionBoxes from '../components/home/promotionBoxes';
 import WinterHoliday from './../components/home/winterHoliday';
@@ -47,6 +50,8 @@ export default function Home() {
     }
     console.log("searchReturned = ", searchReturned);
     return (
+        <>
+        <Navbar />
         <div className=' [  ] '>
             <div>
                 <div className=" [ header ] " onClick={(showDropdown === true && isSearched === false) ? closeDropdown : doNada}>
@@ -108,5 +113,7 @@ export default function Home() {
                 image={establishmentNine.imageUrl}
             />
         </div>
+        <Footer />
+        </>
     )
 }

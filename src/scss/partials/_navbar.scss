@@ -1,0 +1,46 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: $blue;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 10;
+    &-ul{
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        margin: auto;
+        vertical-align: middle;
+        padding: 0;
+        width: 20%;
+        margin-right: 2em;
+        &-li{
+            color: $white;
+            margin: auto;
+            vertical-align: middle;
+        }
+    }
+    &-logo{
+        width:200px;
+        margin-left: 2em;
+        &-img{
+            width: 100%;
+        }
+    }
+}
+
+.admin{
+    background-color: $admin-blue;
+    &-ul{
+        width: 50%;
+    }
+    &-text{
+        margin: 0;
+        color: $white;
+        font-weight: bold;
+    }
+}

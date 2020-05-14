@@ -4,6 +4,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import Navbar from './../components/navbar';
+import Footer from './../components/footer';
+
+
 
 export default function Contact() {
     const { register, handleSubmit, errors } = useForm();
@@ -29,6 +33,8 @@ export default function Contact() {
     console.log(errors);
 
     return (
+      <>
+      <Navbar />
         <div className=" [ container ] ">
             <h1 className=" [ text-center ] ">Contact us</h1>
             <div className=" [ col-4 m-auto ] ">
@@ -74,6 +80,8 @@ export default function Contact() {
                 </form>
             </div>
         </div>
+        <Footer />
+        </>
     );
 }
 

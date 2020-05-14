@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from './../components/navbar';
+import Footer from './../components/footer';
+
 import { GET_ESTABLISHMENTS } from './../constants/constants';
 import AllHotelsCard from './../components/allHotels';
 
@@ -16,6 +19,8 @@ export default function AllHotels() {
     console.log(allEstablishments)
     return (
         <>
+        <Navbar />
+        <div className=" [ container ] ">
             <h1 className=" [ text-center ] ">All hotels</h1>
             <div className=" [ col-10 m-auto  d-flex jc-between flex-wrap ] ">
                 <>
@@ -37,7 +42,8 @@ export default function AllHotels() {
                     }
                 </>
             </div>
-
+        </div>
+        <Footer /> 
         </>
     )
 }
