@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AdminNavbar from './../components/adminNavbar';
 import { POST_NEWESTABLISHMENT } from './../constants/constants';
 import axios from 'axios';
@@ -15,10 +15,25 @@ export default function ContactMessages(props) {
         const form = new FormData()
         form.append('establishmentName', data.establishmentName)
         form.append('establishmentEmail', data.establishmentEmail);
-        form.append('checkin', data.checkin);
-        form.append('checkout', data.checkout);
-        form.append('notes', data.notes);
-
+        form.append('imageUrl', data.imageUrl);
+        form.append('price', data.price);
+        form.append('googleLat', data.googleLat);
+        form.append('googleLong', data.googleLong);
+        form.append('description', data.description);
+        form.append('selfCatering', data.selfCatering);
+        /*       {
+                "establishmentName": "Sunsssset Beach",
+                "establishmentEmail": "info@sunsetbeach.com",
+                "imageUrl": "https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",
+                "price": "85",
+                "maxGuests": "18",
+                "googleLat": "60.393388",
+                "googleLong": "5.228720",
+                "description": "Get ready for some amazing sunsets as you sip a cocktail and watch dolphins play in the harbour below.",
+                "selfCatering": "true",
+                "id": "1"
+            }
+             */
 
         /*         sessionStorage.setItem('establishment', data.establishment);
                 sessionStorage.setItem('clientName', data.clientName);
@@ -45,19 +60,7 @@ export default function ContactMessages(props) {
      let sessionNotes = sessionStorage.getItem('notes') */
 
     return (
-        /*       {
-                "establishmentName": "Sunsssset Beach",
-                "establishmentEmail": "info@sunsetbeach.com",
-                "imageUrl": "https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",
-                "price": "85",
-                "maxGuests": "18",
-                "googleLat": "60.393388",
-                "googleLong": "5.228720",
-                "description": "Get ready for some amazing sunsets as you sip a cocktail and watch dolphins play in the harbour below.",
-                "selfCatering": "true",
-                "id": "1"
-            }
-             */
+
         <>
             <AdminNavbar />
             <div className=" [ container m-auto col-6 ] ">
@@ -115,16 +118,18 @@ export default function ContactMessages(props) {
                         <div className="[ col-3 ]">
                             <label >Breakfast included?</label>
                             <div className=" [ input-container ] ">
+                                <label >Yes</label>
                                 <input
                                     name="selfCatering"
                                     type="radio"
-                                    value="Yes"
+                                    value="True"
                                     ref={register({ required: true })} />
-
+                                
+                                <label >No</label>
                                 <input
                                     name="selfCatering"
                                     type="radio"
-                                    value="No"
+                                    value="False"
                                     ref={register({ required: true })} />
                             </div>
                         </div>
@@ -158,7 +163,7 @@ export default function ContactMessages(props) {
                                     type="text"
                                     placeholder="Latitude"
                                     name="googleLat"
-                                    ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+                                    ref={register({ required: true })}
                                     className=" [ form-input col-12 ] " />
                             </div>
                             {errors.googleLat && <p className=" [ errorMessage ] ">Latitude is required</p>}
@@ -170,14 +175,42 @@ export default function ContactMessages(props) {
                                     type="text"
                                     placeholder="Longitude"
                                     name="googleLong"
-                                    ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+                                    ref={register({ required: true })}
                                     className=" [ form-input col-12 ] " />
                             </div>
                             {errors.googleLong && <p className=" [ errorMessage ] ">Longitude is required</p>}
-                       
                         </div>
                     </div>
 
+
+                    <div className="[ form-input-dflex ]">
+                        <div className="[ col-4 ]">
+                            <label >Image (URL)</label>
+                            <div className=" [ input-container ] ">
+                                <input
+                                    type="url"
+                                    placeholder="imageUrl"
+                                    name="imageUrl"
+                                    ref={register}
+                                    className=" [ form-input col-12 ] " />
+
+                            </div>
+                            {errors.imageUrl && <p className=" [ errorMessage ] ">Image is required</p>}
+                        </div>
+                        <div className="[ col-4 ]">
+                            <label >Price</label>
+                            <div className=" [ input-container ] ">
+                                <input
+                                    type="number"
+                                    placeholder="price"
+                                    name="price"
+                                    ref={register({ required: true, min: 1, maxLength: 10 })}
+                                    className=" [ form-input col-12 ] " />
+
+                            </div>
+                            {errors.price && <p className=" [ errorMessage ] ">Price is required</p>}
+                        </div>
+                    </div>
 
 
                     <input
