@@ -1,17 +1,20 @@
 import React from 'react';
 
-const AllEnquiries = ({ establishment, clientName, email, checkin, checkout, comment }) => {
+const AllEnquiries = ({ establishment, clientName, email, checkin, checkout, notes, confirm }) => {
 
     return (
-        <div className=" [ col-12 ] ">
-            <div className=" [ enquiry col-6 ] ">
+        <div className=" [ enquiry col-8 d-flex jc-center m-auto ] ">
+            <div className=" [  col-6 enquiry-box ] ">
                 <h2 className=" [ enquiry-establishment ] ">{establishment}</h2>
                 <h3 className=" [ enquiry-name ] ">{clientName}</h3>
                 <p className=" [ enquiry-email ] ">{email}</p>
-                <div className=" [ d-flex jc-between ] ">
+                <div className=" [ d-flex jc-between col-6 ] ">
                     <div>
                     <span>{checkin}</span>
 
+                    </div>
+                    <div>
+                        <span>-</span>
                     </div>
                     <div>
                         <span>{checkout}</span>
@@ -20,8 +23,9 @@ const AllEnquiries = ({ establishment, clientName, email, checkin, checkout, com
             </div>
             <div className=" [ col-6 ] ">
                 <div>
-                    <p>{comment}</p>
+                    <p>{notes}</p>
                 </div>
+                <button onClick={confirm}>Confirm</button>
             </div>
         </div>
     )

@@ -8,6 +8,7 @@ import AllEnquiries from './../components/enquiries';
 export default function Enquiries(props) {
     const [allEnquiries, setAllEnquiries] = useState(undefined);
 
+    const [confirmedEnquiry, setConfirmedEnquiry] = useState(false);
 
     useEffect(() => {
         axios.get(GET_ENQUIRIES)
@@ -17,6 +18,14 @@ export default function Enquiries(props) {
     }, [])
     console.log(allEnquiries)
     
+
+    function confirmEnquiry(){
+        if(confirmEnquiry){
+            setConfirmedEnquiry(true);
+        } 
+    }
+
+    console.log("confirmedEnquiry = ", confirmedEnquiry);
     return (
         <div>
             <AdminNavbar />
@@ -24,13 +33,14 @@ export default function Enquiries(props) {
             <>
                     {
                         (allEnquiries !== undefined) ?
-                            allEnquiries.map((value, index) => {
+                            allEnquiries.slice(0).reverse().map((value, index) => {
                                 return <AllEnquiries key={index}
                                 establishment={value.establishment}
                                     clientName={value.clientName}
                                     email={value.email}
                                     checkin={value.checkin}
                                     checkout={value.checkout}
+                                    notes={value.notes}
                                 />
                             }) :
                             <div className=' [ d-flex justify-content-center col-md-3 ] '>

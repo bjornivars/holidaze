@@ -1,6 +1,13 @@
 .enquiry{
+    box-sizing: border-box;
     margin: auto;
     border: 1px solid $black;
+    margin-bottom: 2em;
+    &-box{
+        border-right: 1px solid $black;
+        border-left: 10px solid $btn-bg;
+        padding: 20px;
+    }
     &-establishment{
 
     }

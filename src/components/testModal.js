@@ -12,6 +12,7 @@ const Modal = ({ establishmentName,
     const { register, handleSubmit, errors } = useForm();
     const [success, setSuccess] = useState(false)
 
+    let d = new Date();
     const onSubmit = (data) => {
         // console.log(data);
         const form = new FormData()
@@ -20,11 +21,13 @@ const Modal = ({ establishmentName,
         form.append('email', data.email);
         form.append('checkin', data.checkin);
         form.append('checkout', data.checkout);
+        form.append('notes', data.notes);
         sessionStorage.setItem('establishment', data.establishment);
         sessionStorage.setItem('clientName', data.clientName);
         sessionStorage.setItem('email', data.email);
         sessionStorage.setItem('checkin', data.checkin);
         sessionStorage.setItem('checkout', data.checkout);
+        sessionStorage.setItem('notes', data.notes);
         axios.post(POST_ENQUIRY, form, {
             headers: { 'Content-Type': 'multipart/form-data' },
         })
@@ -41,6 +44,7 @@ const Modal = ({ establishmentName,
     let sessionEmail = sessionStorage.getItem('email')
     let sessionCheckin = sessionStorage.getItem('checkin')
     let sessionCheckout = sessionStorage.getItem('checkout')
+    let sessionNotes = sessionStorage.getItem('notes')
 
     return (
         <div className=" [ modal ] ">
@@ -59,7 +63,7 @@ const Modal = ({ establishmentName,
                                     value={establishmentName}
                                     ref={register({ required: true })}
                                     className=" [ form-input col-12 ] "
-                                    readonly />
+                                    readOnly />
                             </div>
 
                             <label >Name</label>
@@ -108,6 +112,16 @@ const Modal = ({ establishmentName,
                                 </div>
                             </div>
 
+                            <label >Message</label>
+                            <div className=" [ input-container ] ">
+                                <textarea
+                                    type="text"
+                                    placeholder="message"
+                                    name="notes"
+                                    ref={register({ required: false })}
+                                    className=" [ form-input col-12 ] " />
+                            </div>
+
                             <input
                                 type="submit" className=" [ btn ] " />
                         </form>
@@ -119,6 +133,8 @@ const Modal = ({ establishmentName,
                             <p><b>Email: </b> {sessionEmail}</p>
                             <p><b>Checkin: </b> {sessionCheckin}</p>
                             <p><b>Checkout: </b> {sessionCheckout}</p>
+                            <p><b>Message: </b> {sessionNotes}</p>
+
                             <button className=" [ btn ] " onClick={closeModal}>Close</button>
                         </div>
                     </div>
