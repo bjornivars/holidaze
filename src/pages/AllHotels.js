@@ -17,6 +17,8 @@ export default function AllHotels() {
             })
     }, [])
     console.log(allEstablishments)
+
+
     return (
         <>
         <Navbar />

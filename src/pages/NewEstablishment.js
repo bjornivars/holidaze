@@ -1,14 +1,31 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AdminNavbar from './../components/adminNavbar';
-import { POST_NEWESTABLISHMENT } from './../constants/constants';
+import { POST_NEWESTABLISHMENT, GET_ESTABLISHMENTS } from './../constants/constants';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
 
 export default function ContactMessages(props) {
     const { register, handleSubmit, errors } = useForm();
-    const [success, setSuccess] = useState(false)
+    const [success, setSuccess] = useState(false);
+    const [allEstablishments, setAllEstablishments] = useState("undefined shite")
+    let [lastEstablishment, setLastEstablishment] = useState("should be last number here")
+    useEffect(() => {
+        axios.get(GET_ESTABLISHMENTS)
+            .then((result) => {
+                setAllEstablishments(result.data);
+                setLastEstablishment(result.data[result.data.length - 1].id);
+            })
+    }, [])
+
+
+
+    console.log(lastEstablishment, " = last establishment id");
+
+    let lastId = ++lastEstablishment
+
+    console.log("last id = ", lastId)
 
     const onSubmit = (data) => {
         // console.log(data);
@@ -21,6 +38,8 @@ export default function ContactMessages(props) {
         form.append('googleLong', data.googleLong);
         form.append('description', data.description);
         form.append('selfCatering', data.selfCatering);
+        form.append('id', data.id);
+
         /*       {
                 "establishmentName": "Sunsssset Beach",
                 "establishmentEmail": "info@sunsetbeach.com",
@@ -68,11 +87,6 @@ export default function ContactMessages(props) {
 
                 <form onSubmit={handleSubmit(onSubmit)} className=" [ enquiry-form col-10 m-auto ] " >
 
-
-
-
-
-
                     <div className="[ form-input-dflex ]">
                         <div className="[ col-8 ]">
                             <label >Establishment Name</label>
@@ -100,8 +114,6 @@ export default function ContactMessages(props) {
                         </div>
                     </div>
 
-
-
                     <div className="[ form-input-dflex ]">
                         <div className="[ col-8 ]">
                             <label >Establishment Email</label>
@@ -124,7 +136,7 @@ export default function ContactMessages(props) {
                                     type="radio"
                                     value="True"
                                     ref={register({ required: true })} />
-                                
+
                                 <label >No</label>
                                 <input
                                     name="selfCatering"
@@ -134,8 +146,6 @@ export default function ContactMessages(props) {
                             </div>
                         </div>
                     </div>
-
-
 
                     <div className="[ form-input-dflex ]">
                         <div className="[ col-12 ]">
@@ -152,8 +162,6 @@ export default function ContactMessages(props) {
                             </div>
                         </div>
                     </div>
-
-
 
                     <div className="[ form-input-dflex ]">
                         <div className="[ col-4 ]">
@@ -181,7 +189,6 @@ export default function ContactMessages(props) {
                             {errors.googleLong && <p className=" [ errorMessage ] ">Longitude is required</p>}
                         </div>
                     </div>
-
 
                     <div className="[ form-input-dflex ]">
                         <div className="[ col-4 ]">
@@ -212,7 +219,13 @@ export default function ContactMessages(props) {
                         </div>
                     </div>
 
-
+                    <input
+                        type="number"
+                        name="id"
+                        value={lastId}
+                        ref={register({ required: true })}
+                        readOnly
+                    />
                     <input
                         type="submit" className=" [ btn ] " />
                 </form>
