@@ -59,7 +59,7 @@ export default function Home() {
                     <div className=" [ header-search col-6 m-auto ] ">
                         <input
                             autoComplete="off"
-                            className=" [ header-search-input col-10 ] "
+                            className=" [ header-search-input input-padding col-10 ] "
                             type="search"
                             name="search"
                             placeholder="E.g Sunset"

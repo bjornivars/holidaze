@@ -17,9 +17,10 @@ h2{
     margin-top: 0;
 }
 h3{
-    font-family: "Proza Libre";
+    font-family: "Open Sans";
     font-size: 25px;
     margin-top: 0;
+    font-weight: normal;
 }
 
 p{
@@ -27,9 +28,18 @@ p{
 }
 a{
     color: $black;
+    font-family: "Proza Libre"
 }
 input{
     background-color: $lightgray;
+}
+
+.link{
+    color: $btn-bg;
+}
+
+span{
+    font-family: "Open Sans";
 }
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ PLACEMENT STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -51,6 +61,13 @@ input{
 .text-center{
     text-align: center;
 }
+
+.pl-5{
+    padding-left: 5px;
+}
+.pl-10{
+    padding-left: 10px;
+}
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ FLEX STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .d-flex{
@@ -67,6 +84,9 @@ input{
 }
 .jc-end{
     justify-content: flex-end;
+}
+.ji-center{
+    justify-items: center;
 }
 
 
@@ -89,7 +109,7 @@ input{
 }
 
 .icon-grey{
-    font-size: 20px;
+    font-size: 16px;
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 10px;
@@ -128,6 +148,7 @@ input{
         margin: auto;
     }
 }
+
 // Desktop
 @media screen and (min-width: 992px) {
 

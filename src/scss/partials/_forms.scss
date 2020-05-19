@@ -25,11 +25,13 @@
         }
     }
     &-contact{
-        padding-left: 10px;
         border-left: none;
     }
 }
 
+.input-padding{
+    padding-left: 20px;
+}
 /* Style the input container */
 .input-container {
     display: flex;

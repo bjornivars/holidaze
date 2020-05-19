@@ -7,15 +7,15 @@ const AllHotelsCard = ({ imageUrl, establishmentName, id, price, description, ma
         <div className=" [ col-2 hotel-card ] ">
             <Link to={`/hotelSpecific/${--id}`}>
                 <img className=" [ col-12 hotel-card-img ] " src={imageUrl} alt={establishmentName} />
-                <div className=" [ hotel-card-text ] ">
-                    <h2 className=" [ hotel-card-text-h2 ] ">{establishmentName}</h2>
-                    <p className=" [ hotel-card-text-p ] ">{description}</p>
-                    <div className=" [ d-flex jc-between ] ">
+                <div className=" [ promotion-box-text ] ">
+                    <h3 className=" [ promotion-box-text-h3 ] ">{establishmentName}</h3>
+                    <p className=" [ promotion-box-text-p ] ">{description}</p>
+                    <div className=" [ hotel-card-info ] ">
                         <div className=" [ icon-grey ] ">
-                            <i className=" [ fa fa-users ] "></i><span>{maxGuests}</span>
+                            <i className=" [ fa fa-users hotel-card-guest ] "></i><span className=" [ pl-5 ] ">{maxGuests}</span>
                         </div>
-                        <div>
-                            <span className=" [ hotel-card-text-price ] ">${price}</span>
+                        <div className=" [  ] ">
+                            <span className=" [ hotel-card-price ] ">${price}</span>
                         </div>
                     </div>
                 </div>

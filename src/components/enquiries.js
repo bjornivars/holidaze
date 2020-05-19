@@ -21,11 +21,11 @@ const AllEnquiries = ({ establishment, clientName, email, checkin, checkout, not
                     </div>
                 </div>
             </div>
-            <div className=" [ col-6 ] ">
+            <div className=" [ col-6 enquiry-box-right ] ">
                 <div>
                     <p>{notes}</p>
                 </div>
-                <button onClick={confirm}>Confirm</button>
+                <button className=" [ btn ] ">Checkin</button>
             </div>
         </div>
     )

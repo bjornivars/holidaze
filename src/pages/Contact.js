@@ -44,10 +44,10 @@ export default function Contact() {
                         <i className="fa fa-user form-input-icon"></i>
                         <input
                             type="text"
-                            placeholder="clientName"
+                            placeholder="Emter your name"
                             name="clientName"
                             ref={register({ required: true, maxLength: 40 })}
-                            className=" [ form-input form-input-contact col-12 ] "
+                            className=" [ form-input form-input-contact col-12 input-padding ] "
                         />
                     </div>
                     {errors.clientName && <p className=" [ errorMessage ] ">Name is required</p>}
@@ -56,10 +56,10 @@ export default function Contact() {
                         <i className="fa fa-envelope form-input-icon"></i>
                         <input
                             type="text"
-                            placeholder="email"
+                            placeholder="Enter Email"
                             name="email"
                             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-                            className=" [ form-input form-input-contact col-12  ] "
+                            className=" [ form-input form-input-contact col-12 input-padding ] "
                         />
                     </div>
                     {errors.email && <p className=" [ errorMessage ] ">Email is incorrect</p>}
@@ -69,8 +69,9 @@ export default function Contact() {
                         <i className="fa fa-comment form-input-icon form-input-icon-comment"></i>
                         <textarea
                             name="message"
+                            placeholder="Enter Message"
                             ref={register({ required: true, maxLength: 800 })}
-                            className=" [  form-input form-input-contact col-12  ] "
+                            className=" [  form-input form-input-contact col-12 input-padding ] "
                         />
                     </div>
                     {errors.message && <p className=" [ errorMessage ] ">Message is required</p>}

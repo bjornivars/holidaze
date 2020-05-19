@@ -8,11 +8,11 @@ const AllMessages = ({ clientName, email, message }) => {
                 <h3 className=" [ enquiry-name ] ">{clientName}</h3>
                 <p className=" [ enquiry-email ] ">{email}</p>
             </div>
-            <div className=" [ col-6 ] ">
+            <div className=" [ col-6 enquiry-box-right ] ">
                 <div>
                     <p>{message}</p>
                 </div>
-                <button >Confirm</button>
+                <a className=" [ btn ] " href={"mailto:" + email}>Answer with email</a>
             </div>
         </div>
     )

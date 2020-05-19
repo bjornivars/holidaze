@@ -7,10 +7,11 @@ import { useForm } from 'react-hook-form';
 
 
 export default function ContactMessages(props) {
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, reset, errors } = useForm();
     const [success, setSuccess] = useState(false);
     const [allEstablishments, setAllEstablishments] = useState("undefined shite")
     let [lastEstablishment, setLastEstablishment] = useState("should be last number here")
+    
     useEffect(() => {
         axios.get(GET_ESTABLISHMENTS)
             .then((result) => {
@@ -33,42 +34,29 @@ export default function ContactMessages(props) {
         form.append('establishmentName', data.establishmentName)
         form.append('establishmentEmail', data.establishmentEmail);
         form.append('imageUrl', data.imageUrl);
+        form.append('maxGuests', data.maxGuests);
         form.append('price', data.price);
         form.append('googleLat', data.googleLat);
         form.append('googleLong', data.googleLong);
         form.append('description', data.description);
         form.append('selfCatering', data.selfCatering);
         form.append('id', data.id);
-
-        /*       {
-                "establishmentName": "Sunsssset Beach",
-                "establishmentEmail": "info@sunsetbeach.com",
-                "imageUrl": "https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",
-                "price": "85",
-                "maxGuests": "18",
-                "googleLat": "60.393388",
-                "googleLong": "5.228720",
-                "description": "Get ready for some amazing sunsets as you sip a cocktail and watch dolphins play in the harbour below.",
-                "selfCatering": "true",
-                "id": "1"
-            }
-             */
-
-        /*         sessionStorage.setItem('establishment', data.establishment);
-                sessionStorage.setItem('clientName', data.clientName);
-                sessionStorage.setItem('email', data.email);
-                sessionStorage.setItem('checkin', data.checkin);
-                sessionStorage.setItem('checkout', data.checkout);
-                sessionStorage.setItem('notes', data.notes); */
         axios.post(POST_NEWESTABLISHMENT, form, {
             headers: { 'Content-Type': 'multipart/form-data' },
         })
             .then(data => {//success
-                setSuccess(true)
+                setSuccess("The New Establishment has been activated");
+                clearForm();
             }, error => { //failed
                 setSuccess("Oops.. Something went wrong. Please try again later")
             })
 
+    }
+    function clearForm(){
+        setTimeout(function(){ 
+            setSuccess(false);
+            reset();
+        }, 3000);
     }
     console.log(errors);
     /*  let sessionEstablishmentName = sessionStorage.getItem('establishmentName');
@@ -77,6 +65,7 @@ export default function ContactMessages(props) {
      let sessionCheckin = sessionStorage.getItem('checkin')
      let sessionCheckout = sessionStorage.getItem('checkout')
      let sessionNotes = sessionStorage.getItem('notes') */
+
 
     return (
 
@@ -107,7 +96,7 @@ export default function ContactMessages(props) {
                                     type="number"
                                     placeholder="Max Guests"
                                     name="maxGuests"
-                                    ref={register({ required: true, maxLength: 40 })}
+                                    ref={register({ required: true, maxLength: 4 })}
                                     className=" [ form-input col-12 ] " />
                             </div>
                             {errors.maxGuests && <p className=" [ errorMessage ] ">Max guests is required</p>}
@@ -226,11 +215,38 @@ export default function ContactMessages(props) {
                         ref={register({ required: true })}
                         readOnly
                     />
+                    <p className=" [ successMessage ] ">{success}</p>
                     <input
-                        type="submit" className=" [ btn ] " />
+                        type="submit" disabled={success !== false} className=" [ btn ] " />
                 </form>
             </div>
 
         </>
     );
 }
+
+
+
+
+
+
+/*       {
+        "establishmentName": "Sunsssset Beach",
+        "establishmentEmail": "info@sunsetbeach.com",
+        "imageUrl": "https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",
+        "price": "85",
+        "maxGuests": "18",
+        "googleLat": "60.393388",
+        "googleLong": "5.228720",
+        "description": "Get ready for some amazing sunsets as you sip a cocktail and watch dolphins play in the harbour below.",
+        "selfCatering": "true",
+        "id": "1"
+    }
+     */
+
+/*         sessionStorage.setItem('establishment', data.establishment);
+        sessionStorage.setItem('clientName', data.clientName);
+        sessionStorage.setItem('email', data.email);
+        sessionStorage.setItem('checkin', data.checkin);
+        sessionStorage.setItem('checkout', data.checkout);
+        sessionStorage.setItem('notes', data.notes); */

@@ -18,8 +18,11 @@
             font-size: 50px;
         }
         &-search{
+            height: 3em;
+            display: flex;
+            justify-content: center;
             &-input{
-                padding: 15px 20px 15px 20px;
+                height: 100%;
                 border: 1px solid transparent;
                 border-radius: 2em 0 0 2em ;
                 &:focus{
@@ -28,8 +31,10 @@
             }
 
             &-btn{
-                padding: 15px 20px 15px 20px;
-                border: 1px solid transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
                 border-radius: 0 2em 2em 0 ;
                 background-color: $btn-bg;
                 color: $white;
@@ -76,23 +81,6 @@
         font-size: 20px;
     }
 
-    .promotion{
-        position: absolute;
-        top: 35em;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        &-box{
-            background-color: $white;
-            box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-            &-text{
-                padding: 0px 15px 15px 15px;
-                position: relative;
-                z-index: 1;
-            }
-        }
-    }
     .winterholiday{
         margin-top: 30em;
         background-color: $blue;

@@ -9,35 +9,26 @@
     }
     .hotel-card{
         margin: 1em;
-        box-shadow: 0 10px 16px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.1);
+        box-shadow: $box-shadow;
         &:hover{
-            box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-
+            box-shadow: $box-shadow-hover;
         }
         &-img{
             min-height: 10em;
             max-height: 10em;
             min-width: 1em;
         }
-        &-text{
-            padding: 0px 15px 15px 15px;
-            &-h2{
-                font-size: 25px;
-                white-space: nowrap; 
-                width: 100%; 
-                overflow: hidden;
-                text-overflow: ellipsis; 
-            }
-            &-p{
-                white-space: nowrap; 
-                width: 100%; 
-                overflow: hidden;
-                text-overflow: ellipsis; 
-            }
-            &-price{
-                color: $icon-orange;
-                font-weight: bold;
-            }
+        &-info{
+            display: flex;
+            justify-content: space-between;
+            justify-items: center;
+        }
+        &-price{
+            color: $icon-orange;
+            font-weight: bold;
+        }
+        &-guest{
+            font-size: 16px;
         }
     }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 
 const PromotionBoxes = () => {
@@ -9,22 +8,22 @@ const PromotionBoxes = () => {
                 <div className=" [ promotion-box col-3 ] ">
                     <img className=" [ promotion-box-img col-12 ] " src={require('./../../Assets/holidaze_travel.png')} alt="Tired of work?" />
                     <div className=" [ promotion-box-text ] ">
-                        <h3>Tired of work? </h3>
-                        <Link to="/">Check our travel suggestions!</Link>
+                        <h3 className=" [ promotion-box-text-h3 ] ">Tired of work? </h3>
+                        <a href="https://placeholder.com/" target="_blank" className=" [ link ] ">Check our travel suggestions!</a>
                     </div>
                 </div>
                 <div className=" [ promotion-box col-3 ] ">
                     <img className=" [ promotion-box-img col-12 ] " src={require('./../../Assets/holidaze_flysafe.jpg')} alt="Tired of work?" />
                     <div className=" [ promotion-box-text ] ">
-                        <h3>Fly safe, fast, cheap! </h3>
-                        <Link to="/">Check our flights!</Link>
+                        <h3 className=" [ promotion-box-text-h3 ] ">Fly safe, fast, cheap! </h3>
+                        <a href="https://placeholder.com/" target="_blank" className=" [ link ] ">Check our flights!</a>
                     </div>
                 </div>
                 <div className=" [ promotion-box col-3 ] ">
                     <img className=" [ promotion-box-img col-12 ] " src={require('./../../Assets/holidaze_roadtrip.jpg')} alt="Tired of work?" />
                     <div className=" [ promotion-box-text ] ">
-                        <h3>Roadtrip at the coast? </h3>
-                        <Link to="/">Check our rental cars!</Link>
+                        <h3 className=" [ promotion-box-text-h3 ] ">Roadtrip at the coast? </h3>
+                        <a href="https://placeholder.com/" target="_blank" className=" [ link ] ">Check our rental cars!</a>
                     </div>
                 </div>
             </div>

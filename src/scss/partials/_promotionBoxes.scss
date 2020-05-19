@@ -1,0 +1,26 @@
+.promotion{
+    position: absolute;
+    top: 35em;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    &-box{
+        background-color: $white;
+        box-shadow: $box-shadow;
+        &-text{
+            padding: 15px 15px 15px 15px;
+            position: relative;
+            z-index: 1;
+            &-h3{
+                margin-bottom: .5em;
+            }
+            &-p{
+                white-space: nowrap; 
+                width: 100%; 
+                overflow: hidden;
+                text-overflow: ellipsis; 
+            }
+        }
+    }
+}
