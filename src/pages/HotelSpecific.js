@@ -14,7 +14,6 @@ export default function HotelSpecific() {
     let { id } = useParams();
     const [hotelResult, setHotelResult] = useState(undefined);
     const [openModal, setOpenModal] = useState(false);
-    const [breakfastIncluded, setBreakfastIncluded] = useState(false)
 
     useEffect(() => {
         axios.get(GET_ESTABLISHMENTS)
@@ -101,5 +100,3 @@ export default function HotelSpecific() {
         </>
     )
 }
-
-/*  */

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './scss/styles.scss';
-import Login from './pages/Login';
 
 
 export default function App(props) {

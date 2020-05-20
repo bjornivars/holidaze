@@ -15,10 +15,6 @@ export default function Enquiries(props) {
             })
     }, [])
     console.log(allEnquiries)
-
-
-
-
     return (
         <div>
             <AdminNavbar />

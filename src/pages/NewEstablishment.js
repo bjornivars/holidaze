@@ -9,13 +9,11 @@ import { useForm } from 'react-hook-form';
 export default function ContactMessages(props) {
     const { register, handleSubmit, reset, errors } = useForm();
     const [success, setSuccess] = useState(false);
-    const [allEstablishments, setAllEstablishments] = useState("undefined shite")
     let [lastEstablishment, setLastEstablishment] = useState("should be last number here")
-    
+
     useEffect(() => {
         axios.get(GET_ESTABLISHMENTS)
             .then((result) => {
-                setAllEstablishments(result.data);
                 setLastEstablishment(result.data[result.data.length - 1].id);
             })
     }, [])
@@ -52,21 +50,13 @@ export default function ContactMessages(props) {
             })
 
     }
-    function clearForm(){
-        setTimeout(function(){ 
+    function clearForm() {
+        setTimeout(function () {
             setSuccess(false);
             reset();
         }, 3000);
     }
-    console.log(errors);
-    /*  let sessionEstablishmentName = sessionStorage.getItem('establishmentName');
-     let sessionClientName = sessionStorage.getItem('clientName')
-     let sessionEmail = sessionStorage.getItem('email')
-     let sessionCheckin = sessionStorage.getItem('checkin')
-     let sessionCheckout = sessionStorage.getItem('checkout')
-     let sessionNotes = sessionStorage.getItem('notes') */
-
-
+    //console.log(errors);
     return (
 
         <>
@@ -224,29 +214,3 @@ export default function ContactMessages(props) {
         </>
     );
 }
-
-
-
-
-
-
-/*       {
-        "establishmentName": "Sunsssset Beach",
-        "establishmentEmail": "info@sunsetbeach.com",
-        "imageUrl": "https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",
-        "price": "85",
-        "maxGuests": "18",
-        "googleLat": "60.393388",
-        "googleLong": "5.228720",
-        "description": "Get ready for some amazing sunsets as you sip a cocktail and watch dolphins play in the harbour below.",
-        "selfCatering": "true",
-        "id": "1"
-    }
-     */
-
-/*         sessionStorage.setItem('establishment', data.establishment);
-        sessionStorage.setItem('clientName', data.clientName);
-        sessionStorage.setItem('email', data.email);
-        sessionStorage.setItem('checkin', data.checkin);
-        sessionStorage.setItem('checkout', data.checkout);
-        sessionStorage.setItem('notes', data.notes); */

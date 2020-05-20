@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from './../components/navbar';
 import Footer from './../components/footer';
 
@@ -33,7 +33,6 @@ export default function AllHotels() {
         <>
             <Navbar />
             <div className=" [ container ] ">
-
                 <h1 className=" [ text-center ] ">All hotels</h1>
                 <div className=" [ header-search col-6 col-t-10 m-auto allHotels ] ">
                     <input
@@ -45,11 +44,8 @@ export default function AllHotels() {
                         onChange={handleFiltering}
                     />
                     <Link to={`/allHotels`} className=" [ header-search-btn col-2 col-t-2 ] ">Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></Link>
-
                 </div>
-
                 <div className=" [ col-10 m-auto d-flex jc-between flex-wrap ] ">
-
                     {
                         (!isSearched) ?
                             <>
@@ -79,7 +75,7 @@ export default function AllHotels() {
                                             imageUrl={value.imageUrl}
                                             description={value.description}
                                             maxGuests={value.maxGuests}
-                                        />                                        
+                                        />
                                     }) :
                                     <div className=' [ d-flex justify-content-center col-md-3 ] '>
                                         <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' className='col-8 col-md-12' alt='loading' />
@@ -87,28 +83,6 @@ export default function AllHotels() {
                             }
                             </>
                     }
-
-
-
-
-                    {/*                     <>
-                        {
-                            (allEstablishments !== undefined) ?
-                                allEstablishments.map((value, index) => {
-                                    return <AllHotelsCard key={index}
-                                        establishmentName={value.establishmentName}
-                                        price={value.price}
-                                        id={value.id}
-                                        imageUrl={value.imageUrl}
-                                        description={value.description}
-                                        maxGuests={value.maxGuests}
-                                    />
-                                }) :
-                                <div className=' [ d-flex justify-content-center col-md-3 ] '>
-                                    <img src='https://flevix.com/wp-content/uploads/2019/07/Bubble-Preloader-1.gif' className='col-8 col-md-12' alt='loading' />
-                                </div>
-                        }
-                    </> */}
                 </div>
             </div>
             <Footer />

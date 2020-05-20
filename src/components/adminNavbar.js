@@ -5,7 +5,7 @@ const AdminNavbar = (props) => {
 
     const logo = require('./../Assets/holidazeLogoWhite.png');
 
-    function clear(){
+    function clear() {
         sessionStorage.clear()
     }
     return (
@@ -19,8 +19,8 @@ const AdminNavbar = (props) => {
                 <li><Link to="/enquiries" className=" [ nav-ul-li ] " >Enquiries</Link></li>
                 <li><Link to="/contactMessages" className=" [ nav-ul-li ] " >Contact Messages</Link></li>
                 <li><Link to="/newEstablishment" className=" [ nav-ul-li ] " >New Establishment</Link></li>
-                <li><Link className="" to="/adminHome" className=" [ nav-ul-li ] "  >Admin Home</Link></li>
-                <li onClick={clear}><Link className="" to="/adminHome" className=" [ nav-ul-li ] "  >Log out</Link></li>
+                <li><Link to="/adminHome" className=" [ nav-ul-li ] "  >Admin Home</Link></li>
+                <li onClick={clear}><Link to="/adminHome" className=" [ nav-ul-li ] "  >Log out</Link></li>
             </ul>
         </div>
     )

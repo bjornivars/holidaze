@@ -11,8 +11,6 @@ const Modal = ({ establishmentName,
 }) => {
     const { register, handleSubmit, errors } = useForm();
     const [success, setSuccess] = useState(false)
-
-    let d = new Date();
     const onSubmit = (data) => {
         // console.log(data);
         const form = new FormData()
@@ -36,7 +34,6 @@ const Modal = ({ establishmentName,
             }, error => { //failed
                 setSuccess("Oops.. Something went wrong. Please try again later")
             })
-
     }
     console.log(errors);
     let sessionEstablishment = sessionStorage.getItem('establishment');
@@ -121,7 +118,6 @@ const Modal = ({ establishmentName,
                                     ref={register({ required: false })}
                                     className=" [ form-input input-padding col-12 col-t-12  ] " />
                             </div>
-
                             <input
                                 type="submit" className=" [ btn ] " />
                         </form>
@@ -134,7 +130,6 @@ const Modal = ({ establishmentName,
                             <p><b>Checkin: </b> {sessionCheckin}</p>
                             <p><b>Checkout: </b> {sessionCheckout}</p>
                             <p><b>Message: </b> {sessionNotes}</p>
-
                             <button className=" [ btn ] " onClick={closeModal}>Close</button>
                         </div>
                     </div>

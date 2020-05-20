@@ -10,7 +10,7 @@ const AllEnquiries = ({ establishment, clientName, email, checkin, checkout, not
                 <p className=" [ enquiry-email ] ">{email}</p>
                 <div className=" [ d-flex jc-between col-6 ] ">
                     <div>
-                    <span>{checkin}</span>
+                        <span>{checkin}</span>
 
                     </div>
                     <div>
@@ -30,6 +30,5 @@ const AllEnquiries = ({ establishment, clientName, email, checkin, checkout, not
         </div>
     )
 }
-
 
 export default AllEnquiries;
