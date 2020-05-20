@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const HotelClick = ({ imageUrl,
     establishmentName,
     id,
@@ -11,7 +10,7 @@ const HotelClick = ({ imageUrl,
     googleLat,
     googleLong,
     selfCatering,
-    showModal
+    showModal,
 }) => {
     return (
         <div>
@@ -21,12 +20,8 @@ const HotelClick = ({ imageUrl,
                 </div>
                 <div className=" [ specific-details col-8 m-auto ] ">
                     <h1 className=' [ heading text-center ] '>{establishmentName}</h1>
-                    <div className=" [ specific-details-description col-10 m-auto ] ">
-                        <p>{description}</p>
-                    </div>
-
                     <div className=" [ specific-details-icons col-10 m-auto d-flex jc-between ] ">
-                        <div className=" [ specific-details-icons-box d-block col-3 ] ">
+                        <div className={(selfCatering === "true") ? " [ specific-details-icons-box d-block col-3 ] " : " [ d-none ] "}>
                             <div className=" [ orangBox ] ">
                                 <i className=" [ fa fa-coffee ] "></i>
                             </div>
@@ -51,23 +46,17 @@ const HotelClick = ({ imageUrl,
                             <p className=" [ text-center ] ">{googleLat} , {googleLong} </p>
                         </div>
                     </div>
-                    <div className=" [  col-12 d-flex jc-center ] ">
-                        <button className=" [ btn bookingBtn ] " onClick={showModal}>Book for ${price} per night</button>
+                    <div className=" [ col-10 m-auto d-flex jc-between ] ">
+
+
+                        <div className=" [ placeholder col-7 ] ">
+                            <div className=" [ specific-details-description col-12 m-auto ] ">
+                                <h2>Description</h2>
+                                <p>{description}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-
-
-
-
-
-                {/*                 <div> {id}</div>
-                <div> {price}</div>
-                <div> {maxGuests}</div>
-                <div> {googleLat}</div>
-                <div> {establishmentEmail}</div>
-                <div> {googleLong}</div>
-                <div> {selfCatering}</div> */}
             </div>
 
         </div>

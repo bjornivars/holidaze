@@ -17,9 +17,7 @@
             }
         }
         &-details{
-            box-shadow: 0 10px 16px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.1);
-            background-color: $white;
-            position: absolute;
+            background-color: $white;            
             z-index: 2;
             top:30em;
             left: 0;
@@ -31,7 +29,7 @@
                 z-index: 999;
             }
             &-description{
-
+                margin-top: 3em;
             }
             &-icons{
                 margin-top: 3em;
@@ -53,9 +51,19 @@
         text-align: center;
     }
     .bookingBtn{
-        margin-top: 5em;
-        margin-bottom: 5em;
-        width: 33%;
+        position: fixed;
+        bottom: 0;
+        width: 40%;
+        margin-bottom: 2em;
+        max-height: 3em;
+    }
+    .map{
+        overflow: hidden;
+        height: 20em;
+        width: 100%;
+        position: relative;
+        margin: auto;
+
     }
 }
 
