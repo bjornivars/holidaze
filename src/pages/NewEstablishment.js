@@ -85,7 +85,7 @@ export default function ContactMessages(props) {
                                     placeholder="Establishment Name"
                                     name="establishmentName"
                                     ref={register({ required: true, maxLength: 40 })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 ] " />
                             </div>
                             {errors.establishmentName && <p className=" [ errorMessage ] ">Name is required</p>}
                         </div>
@@ -97,7 +97,7 @@ export default function ContactMessages(props) {
                                     placeholder="Max Guests"
                                     name="maxGuests"
                                     ref={register({ required: true, maxLength: 4 })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 ] " />
                             </div>
                             {errors.maxGuests && <p className=" [ errorMessage ] ">Max guests is required</p>}
                         </div>
@@ -112,7 +112,7 @@ export default function ContactMessages(props) {
                                     placeholder="Establishment Email"
                                     name="establishmentEmail"
                                     ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 ] " />
                             </div>
                             {errors.establishmentEmail && <p className=" [ errorMessage ] ">Email is incorrect</p>}
                         </div>
@@ -145,7 +145,7 @@ export default function ContactMessages(props) {
                                     placeholder="description"
                                     name="description"
                                     ref={register({ required: false })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 ] " />
                                 {errors.description && <p className=" [ errorMessage ] ">Checkin date is required</p>}
 
                             </div>
@@ -161,7 +161,7 @@ export default function ContactMessages(props) {
                                     placeholder="Latitude"
                                     name="googleLat"
                                     ref={register({ required: true })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 ] " />
                             </div>
                             {errors.googleLat && <p className=" [ errorMessage ] ">Latitude is required</p>}
                         </div>
@@ -173,7 +173,7 @@ export default function ContactMessages(props) {
                                     placeholder="Longitude"
                                     name="googleLong"
                                     ref={register({ required: true })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 ] " />
                             </div>
                             {errors.googleLong && <p className=" [ errorMessage ] ">Longitude is required</p>}
                         </div>
@@ -188,7 +188,7 @@ export default function ContactMessages(props) {
                                     placeholder="imageUrl"
                                     name="imageUrl"
                                     ref={register}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 ] " />
 
                             </div>
                             {errors.imageUrl && <p className=" [ errorMessage ] ">Image is required</p>}
@@ -201,7 +201,7 @@ export default function ContactMessages(props) {
                                     placeholder="price"
                                     name="price"
                                     ref={register({ required: true, min: 1, maxLength: 10 })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 ] " />
 
                             </div>
                             {errors.price && <p className=" [ errorMessage ] ">Price is required</p>}

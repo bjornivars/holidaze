@@ -49,20 +49,20 @@ const Modal = ({ establishmentName,
     return (
         <div className=" [ modal ] ">
             <div className=" [ modal-overlay ] ">
-                <div className=" [ modal-box col-6 ] ">
+                <div className=" [ modal-box col-6 col-t-8 ] ">
                     <div className=" [ d-flex jc-end ] ">
                         <i onClick={closeModal} className=" [ fa fa-times-circle closeModal ] "></i>
                     </div>
                     <div className={success !== true ? " [ modal-box-form ] " : " [ d-none ] "}>
                         <h1 className="[ text-center ]">{establishmentName}</h1>
-                        <form onSubmit={handleSubmit(onSubmit)} className=" [ enquiry-form col-10 m-auto ] " >
+                        <form onSubmit={handleSubmit(onSubmit)} className=" [ enquiry-form col-10 col-t-10 m-auto ] " >
                             <div className=" [ input-container ] ">
                                 <input
                                     type="text"
                                     name="establishment"
                                     value={establishmentName}
                                     ref={register({ required: true })}
-                                    className=" [ form-input col-12 ] "
+                                    className=" [ form-input col-12 col-t-12 input-padding ] "
                                     readOnly />
                             </div>
 
@@ -73,7 +73,7 @@ const Modal = ({ establishmentName,
                                     placeholder="clientName"
                                     name="clientName"
                                     ref={register({ required: true, maxLength: 40 })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input col-12 col-t-12 input-padding ] " />
                             </div>
                             {errors.clientName && <p className=" [ errorMessage ] ">Name is required</p>}
 
@@ -84,30 +84,30 @@ const Modal = ({ establishmentName,
                                     placeholder="email"
                                     name="email"
                                     ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input col-12 col-t-12 input-padding ] " />
                             </div>
                             {errors.email && <p className=" [ errorMessage ] ">Email is incorrect</p>}
 
                             <div className=" [ form-input-dflex ] ">
-                                <div className=" [ col-5 ] ">
-                                    <label className=" [ col-12 ] ">Checkin</label>
+                                <div className=" [ col-5 col-t-5 ] ">
+                                    <label className=" [ col-12 col-t-12 ] ">Checkin</label>
                                     <input
                                         type="date"
                                         placeholder="Checkin"
                                         name="checkin"
                                         ref={register({ required: true })}
-                                        className=" [ form-input col-12 ] " />
+                                        className=" [ form-input input-padding col-12 col-t-12  ] " />
                                     {errors.checkin && <p className=" [ errorMessage ] ">Checkin date is required</p>}
                                 </div>
 
-                                <div className=" [ col-5 ] ">
-                                    <label className=" [ col-12 ] ">Checkout</label>
+                                <div className=" [ col-5 col-t-5 ] ">
+                                    <label className=" [ col-12 col-t-12 ] ">Checkout</label>
                                     <input
                                         type="date"
                                         placeholder="Checkout"
                                         name="checkout"
                                         ref={register({ required: true })}
-                                        className=" [ form-input col-12 ] " />
+                                        className=" [ form-input input-padding col-12 col-t-12  ] " />
                                     {errors.checkout && <p className=" [ errorMessage ] ">Checkout date is required</p>}
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ const Modal = ({ establishmentName,
                                     placeholder="message"
                                     name="notes"
                                     ref={register({ required: false })}
-                                    className=" [ form-input col-12 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-12  ] " />
                             </div>
 
                             <input
@@ -128,7 +128,7 @@ const Modal = ({ establishmentName,
                     </div>
                     <div className={success ? " [ modal-box-success ] " : " [ d-none ] "}>
                         <h1 className=" [ modal-box-h1 text-center ] " >Thank you for booking <br></br>{sessionEstablishment}</h1>
-                        <div className=" [ col-6 m-auto ] ">
+                        <div className=" [ col-6 col-t-8 m-auto ] ">
                             <p><b>Name: </b> {sessionClientName}</p>
                             <p><b>Email: </b> {sessionEmail}</p>
                             <p><b>Checkin: </b> {sessionCheckin}</p>

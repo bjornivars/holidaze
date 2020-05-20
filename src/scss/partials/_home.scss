@@ -1,43 +1,107 @@
 // General styles
+.header{
+    background-image: url("./../../Assets/holidaze_HeaderImage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &-text{
+        color: white;
+        text-align: center;
+        margin-top: 0;
+    }
+    &-search{
+        display: flex;
+        justify-content: center;
+        &-input{
+            height: 100%;
+            border: 1px solid transparent;
+            border-radius: 2em 0 0 2em ;
+            &:focus{
+                border-radius: 0;
+            }
+        }
 
+        &-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: $btn-bg;
+            color: $white;
+            &:hover{
+                background-color: $btn-bg-hover;
+                cursor: pointer;
+            }
+        }
+        &-dropdown{
+            box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            background-color: $white;
+            margin-left: 25%;
+            padding-top: 2em;
+            padding-bottom: 3em;
+            position: relative;
+            z-index: 2;
+            &-ul{
+                margin: 0;
+                list-style-type: none;
+                padding: 0;
+                padding-top: 1em;
+                padding-bottom: 1em;
+                padding-left: 1em;
+                &:hover{
+                    background-color: $lightgray;
+                }
+                &-link{
+                    color: $black;
+                }
+                &-text{
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+.searchUl{
+    padding-bottom: 2em;
+}
+.searchResult{
+    font-size: 20px;
+}
+
+.winterholiday{
+    margin-top: 30em;
+    background-color: $blue;
+    &-img{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    &-box{
+        margin-left: 10em;
+        margin-top: 7.5em;
+        &-p{
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 5em;
+        }
+    }
+}
 
 // Desktop
 @media screen and (min-width: 992px) {
     .header{
-        background-image: url("./../../Assets/holidaze_HeaderImage.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         min-height: 45em;
         max-height: 70vh;
         &-text{
-            color: white;
-            text-align: center;
-            padding-top: 4em;
-            margin-top: 0;
             font-size: 50px;
+            padding-top: 4em;
         }
         &-search{
             height: 3em;
-            display: flex;
-            justify-content: center;
             &-input{
-                height: 100%;
-                border: 1px solid transparent;
                 border-radius: 2em 0 0 2em ;
-                &:focus{
-                    border-radius: 0;
-                }
             }
-
             &-btn{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
                 border-radius: 0 2em 2em 0 ;
-                background-color: $btn-bg;
-                color: $white;
                 &-icon{
                     margin-left: 10px;
                 }
@@ -48,25 +112,13 @@
             }
             &-dropdown{
                 box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-                background-color: $white;
                 margin-left: 25%;
                 padding-top: 2em;
                 padding-bottom: 3em;
-                position: relative;
-                z-index: 2;
                 &-ul{
-                    margin: 0;
-                    list-style-type: none;
-                    padding: 0;
                     padding-top: 1em;
                     padding-bottom: 1em;
                     padding-left: 1em;
-                    &:hover{
-                        background-color: $lightgray;
-                    }
-                    &-link{
-                        color: $black;
-                    }
                     &-text{
                         margin-left: 20px;
                     }
@@ -74,35 +126,66 @@
             }
         }
     }
-    .searchUl{
-        padding-bottom: 2em;
-    }
-    .searchResult{
-        font-size: 20px;
-    }
+}
 
+// Tablet
+@media screen and (max-width: 991px) {
+    .header{
+        height: 27.5em;
+
+        &-text{
+            font-size: 40px;
+            padding-top: 3.5em;
+        }
+        &-search{
+            height: 3em;
+            &-input{
+                border-radius: 2em 0 0 2em ;
+            }
+            &-btn{
+                padding-left: 10px;
+                padding-right: 10px;
+                border-radius: 0 2em 2em 0 ;
+                &-icon{
+                    margin-left: 10px;
+                }
+                &:hover{
+                    background-color: $btn-bg-hover;
+                    cursor: pointer;
+                }
+            }
+            &-dropdown{
+                box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                margin-left: 16.5%;
+                padding-top: 2em;
+                padding-bottom: 3em;
+                &-ul{
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                    padding-left: 1em;
+                    &-text{
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
     .winterholiday{
-        margin-top: 30em;
-        background-color: $blue;
+        margin-top: 10em;
         &-img{
             margin-top: 2em;
             margin-bottom: 2em;
         }
         &-box{
-            margin-left: 10em;
-            margin-top: 7.5em;
+            margin-left: 5em;
+            margin-top: 4em;
             &-p{
                 font-size: 18px;
                 line-height: 1.5;
-                margin-bottom: 5em;
+                margin-bottom: 2.5em;
             }
         }
     }
-}
-
-// Tablet
-@media screen and (max-width: 991px) {
-
 }
 // MOBILE DEVICES
 @media screen and (max-width: 768px) {

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import AdminNavbar from '../components/adminNavbar';
 import {Link} from 'react-router-dom';
 import Login from './Login';
@@ -7,7 +6,7 @@ import Login from './Login';
 // export default class HomePage extends react.Component {
 export default function HomePage(props) {
     
-const [isLoggedIn, setIsLoggedIn] = useState(false);
+ const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function updateLogin() {
     sessionStorage.setItem("isLoggedIn", true)
@@ -22,7 +21,7 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
     // To remove contact form values:
     sessionStorage.clear();
     //console.log('isLoggedIn should be false = ', isLoggedIn)
-  }
+  } 
   
     return (sessionStorage.getItem('username') !== null && sessionStorage.getItem("isLoggedIn") === "true") ? (
         <div className='App'>

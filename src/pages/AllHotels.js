@@ -35,16 +35,16 @@ export default function AllHotels() {
             <div className=" [ container ] ">
 
                 <h1 className=" [ text-center ] ">All hotels</h1>
-                <div className=" [ header-search col-6 m-auto allHotels ] ">
+                <div className=" [ header-search col-6 col-t-10 m-auto allHotels ] ">
                     <input
                         autoComplete="off"
-                        className=" [ header-search-input input-padding col-10 ] "
+                        className=" [ header-search-input input-padding col-10 col-t-10 ] "
                         type="search"
                         name="search"
                         placeholder="E.g Sunset"
                         onChange={handleFiltering}
                     />
-                    <Link to={`/allHotels`} className=" [ header-search-btn col-2 ] ">Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></Link>
+                    <Link to={`/allHotels`} className=" [ header-search-btn col-2 col-t-2 ] ">Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></Link>
 
                 </div>
 

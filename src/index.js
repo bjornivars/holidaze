@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
 } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

@@ -41,6 +41,12 @@ input{
 span{
     font-family: "Open Sans";
 }
+.text-overflow-ellipsis{
+    text-overflow: ellipsis;
+}
+.overflow-h{
+    overflow: hidden;
+}
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ PLACEMENT STYLES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .m-auto{
@@ -156,7 +162,20 @@ span{
 
 // Tablet
 @media screen and (max-width: 991px) {
-
+    h1{
+        font-family: "Proza Libre";
+    }
+    h2{
+        font-family: "Proza Libre";
+        font-size: 25px;
+        margin-top: 0;
+    }
+    h3{
+        font-family: "Open Sans";
+        font-size: 20px;
+        margin-top: 0;
+        font-weight: normal;
+    }
 }
 // MOBILE DEVICES
 @media screen and (max-width: 768px) {

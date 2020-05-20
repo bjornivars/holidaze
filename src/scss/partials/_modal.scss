@@ -16,10 +16,8 @@
         background-color: $white;
         left: 0;
         right: 0;
-        margin-top: 10%;
         margin-left: auto;
         margin-right: auto;
-        padding-bottom: 2em;
     }
 }
 
@@ -31,4 +29,31 @@
         color: $btn-bg-hover;
         cursor: pointer;
     }
+}
+
+
+// Desktop
+@media screen and (min-width: 992px) {
+    .modal{
+        &-box{
+            margin-top: 10%;
+            padding-bottom: 2em;
+        }
+    }
+}
+
+
+// Tablet
+@media screen and (max-width: 991px) {
+    .modal{
+        &-box{
+            margin-top: 25%;
+            padding-bottom: 4em;
+        }
+    }
+}
+
+// MOBILE DEVICES
+@media screen and (max-width: 768px) {
+
 }

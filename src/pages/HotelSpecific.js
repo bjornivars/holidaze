@@ -67,7 +67,7 @@ export default function HotelSpecific() {
                             }
 
                         </div>
-                        <div className=" [ col-8 m-auto ] ">
+                        <div className=" [ col-8 col-t-10 m-auto ] ">
                             <div className=" [ col-10 m-auto ] ">
                                 <h3>Where to find us</h3>
                                 {

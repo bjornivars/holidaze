@@ -39,26 +39,28 @@ export default function Login(props) {
     return (
         <div className=' [ container ] '>
             <h1 className=' [ text-center mb-5 ] '>Login</h1>
-            <div className=' [ col-4 m-auto ] '>
+            <div className=' [ col-4 col-t-6 m-auto ] '>
                 <form onSubmit={handleSubmit} className=' [ col-md-4 m-auto ] '>
-                <label >Username</label>
-                <div className=" [ input-container ] ">
+                    <label >Username</label>
+                    <div className=" [ input-container ] ">
                         <i className="fa fa-user form-input-icon"></i>
                         <input type='text'
-                        name='username'
-                        onChange={handleChange}
-                        className=' [ form-input form-input-contact col-12 ] '
-                    />
+                            name='username'
+                            placeholder="Username"
+                            onChange={handleChange}
+                            className=' [ form-input form-input-contact input-padding col-12 col-t-12 ] '
+                        />
                     </div>
-                    
+
                     <label >Password</label>
-                <div className=" [ input-container ] ">
-                <i class="fa fa-key form-input-icon "></i>                        
-                <input type='password'
-                        name='password'
-                        onChange={handleChange}
-                        className=' [ form-input form-input-contact col-12 ] '
-                    />
+                    <div className=" [ input-container ] ">
+                        <i className="fa fa-key form-input-icon "></i>
+                        <input type='password'
+                            name='password'
+                            placeholder="Password"
+                            onChange={handleChange}
+                            className=' [ form-input form-input-contact input-padding col-12 col-t-12 ] '
+                        />
                     </div>
                     {
                         errorMessage !== undefined && <div><p className=' [ errorMessage ] '>{errorMessage}</p></div>

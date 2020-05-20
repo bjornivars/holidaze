@@ -56,10 +56,10 @@ export default function Home() {
             <div>
                 <div className=" [ header ] " onClick={(showDropdown === true && isSearched === false) ? closeDropdown : doNada}>
                     <h1 className=" [ header-text ] ">Which hotel would you like to visit?</h1>
-                    <div className=" [ header-search col-6 m-auto ] ">
+                    <div className=" [ header-search col-6 col-t-8 m-auto ] ">
                         <input
                             autoComplete="off"
-                            className=" [ header-search-input input-padding col-10 ] "
+                            className=" [ header-search-input input-padding col-10 col-t-10 ] "
                             type="search"
                             name="search"
                             placeholder="E.g Sunset"
@@ -68,7 +68,7 @@ export default function Home() {
                         />
                         <Link to={`/allHotels`} className=" [ header-search-btn col-2 ] " onClick={onSearch}>Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></Link>
                     </div>
-                    <div className={(showDropdown !== true && isSearched === false) ? ' [ d-none ] ' : ' [ d-block header-search-dropdown col-5 ] '}>
+                    <div className={(showDropdown !== true && isSearched === false) ? ' [ d-none ] ' : ' [ d-block header-search-dropdown col-5 col-t-6 ] '}>
                         <ul className=" [ searchUl col-12 m-auto ] ">
                             {
                                 (!isSearched) ?
