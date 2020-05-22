@@ -54,10 +54,10 @@ export default function Home() {
                 <div>
                     <div className=" [ header ] " onClick={(showDropdown === true && isSearched === false) ? closeDropdown : doNada}>
                         <h1 className=" [ header-text ] ">Which hotel would you like to visit?</h1>
-                        <div className=" [ header-search col-6 col-t-8 m-auto ] ">
+                        <div className=" [ header-search col-6 col-t-8 col-m-11 m-auto ] ">
                             <input
                                 autoComplete="off"
-                                className=" [ header-search-input input-padding col-10 col-t-10 ] "
+                                className=" [ header-search-input input-padding col-10 col-t-10 col-m-12 ] "
                                 type="search"
                                 name="search"
                                 placeholder="E.g Sunset"

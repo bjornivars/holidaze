@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const WinterHoliday = ({ image }) => {
     return (
-        <div className=" [ winterholiday col-12 col-t-12 ] ">
-            <div className=" [ d-flex col-9 col-t-11 m-auto ] ">
+        <div className=" [ winterholiday col-12 col-t-12 col-m-12 ] ">
+            <div className=" [ d-flex col-9 col-t-11 col-m-12 m-auto ] ">
                 <img src={image} alt="Winter Holiday?" className=" [ winterholiday-img col-t-4 ] " />
                 <div className=" [ winterholiday-box ] ">
                     <h2 className=" [ white m-auto ] ">Winter Holiday?</h2>
