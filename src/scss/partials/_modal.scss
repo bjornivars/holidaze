@@ -55,5 +55,10 @@
    
    // MOBILE DEVICES
    @media screen and (max-width: 768px) {
-   
+    .modal{
+        &-box{
+            margin-top: 5%;
+            padding-bottom: 4em;
+        }
+    }
    }

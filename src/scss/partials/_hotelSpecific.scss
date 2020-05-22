@@ -169,5 +169,34 @@
 }
 // MOBILE DEVICES
 @media screen and (max-width: 768px) {
-
+    .specific{
+        &-header{
+            background-color: $blue;
+            &-img{
+                height: 100%;
+                max-width: 100%;
+                z-index: 1;
+            }
+        }
+        &-details{
+            background-color: $white;            
+            z-index: 2;
+            &-icons{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                &-box{
+                    box-shadow: $box-shadow;
+                    margin-bottom: 1.5em;
+                }
+            }
+        }
+    }
+    .bookingBtn{
+        position: fixed;
+        bottom: 0;
+        width: 60%;
+        margin-bottom: 5em;
+        max-height: 3em;
+    }
 }

@@ -48,7 +48,7 @@ const Modal = ({ establishmentName,
     return (
         <div className=" [ modal ] ">
             <div className=" [ modal-overlay ] ">
-                <div className=" [ modal-box col-6 col-t-8 ] ">
+                <div className=" [ modal-box col-6 col-t-8 col-m-10 ] ">
                     <div className=" [ d-flex jc-end ] ">
                         <i onClick={closeModal} className=" [ fa fa-times-circle closeModal ] "></i>
                     </div>
@@ -88,7 +88,7 @@ const Modal = ({ establishmentName,
                             {errors.email && <p className=" [ errorMessage ] ">Email is incorrect</p>}
 
                             <div className=" [ form-input-dflex ] ">
-                                <div className=" [ col-5 col-t-5 ] ">
+                                <div className=" [ col-5 col-t-5 col-m-12 ] ">
                                     <label className=" [ col-12 col-t-12 ] ">Checkin</label>
                                     <input
                                         type="date"
@@ -99,7 +99,7 @@ const Modal = ({ establishmentName,
                                     {errors.checkin && <p className=" [ errorMessage ] ">Checkin date is required</p>}
                                 </div>
 
-                                <div className=" [ col-5 col-t-5 ] ">
+                                <div className=" [ col-5 col-t-5 col-m-12 ] ">
                                     <label className=" [ col-12 col-t-12 ] ">Checkout</label>
                                     <input
                                         type="date"

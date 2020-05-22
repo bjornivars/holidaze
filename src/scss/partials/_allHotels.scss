@@ -64,5 +64,35 @@
 }
 // MOBILE DEVICES
 @media screen and (max-width: 768px) {
-
+    .hotel{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .allHotels{
+        margin-bottom: 5.5em
+    }
+    .hotel-card{
+        margin: 0;
+        margin-bottom: 1.5em;
+        box-shadow: $box-shadow;
+        &:hover{
+            box-shadow: $box-shadow-hover;
+        }
+        &-img{
+            height: 7.5em;
+            min-width: 1em;
+        }
+        &-info{
+            display: flex;
+            justify-content: space-between;
+            justify-items: center;
+        }
+        &-price{
+            color: $icon-orange;
+            font-weight: bold;
+        }
+        &-guest{
+            font-size: 16px;
+        }
+    }
 }

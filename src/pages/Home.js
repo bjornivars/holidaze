@@ -66,7 +66,7 @@ export default function Home() {
                             />
                             <Link to={`/allHotels`} className=" [ header-search-btn col-2 ] " onClick={onSearch}>Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></Link>
                         </div>
-                        <div className={(showDropdown !== true && isSearched === false) ? ' [ d-none ] ' : ' [ d-block header-search-dropdown col-5 col-t-6 ] '}>
+                        <div className={(showDropdown !== true && isSearched === false) ? ' [ d-none ] ' : ' [ d-block header-search-dropdown col-5 col-t-6 col-m-12 ] '}>
                             <ul className=" [ searchUl col-12 m-auto ] ">
                                 {
                                     (!isSearched) ?
