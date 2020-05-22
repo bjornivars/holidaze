@@ -19,18 +19,18 @@ export default function HomePage(props) {
     <div className='App'>
       <AdminNavbar />
       <div className="container">
-        <div className=" [ largeBox-container col-8 ] ">
-          <div className=" [ largeBox col-3 ]  ">
+        <div className=" [ largeBox-container col-8 col-t-10 ] ">
+          <div className=" [ largeBox col-3 col-t-6 ]  ">
             <Link to="/enquiries">
               <h1 className=" [ largeBox-text ] ">Enquries</h1>
             </Link>
           </div>
-          <div className=" [ largeBox col-3 ]  ">
+          <div className=" [ largeBox col-3 col-t-6 ]  ">
             <Link to="/contactMessages">
               <h1 className=" [ largeBox-text ] ">Contact Messages</h1>
             </Link>
           </div>
-          <div className=" [ largeBox col-3 ]  ">
+          <div className=" [ largeBox col-3 col-t-6 ]  ">
             <Link to="/newEstablishment">
               <h1 className=" [ largeBox-text ] ">New Establishment</h1>
             </Link>
