@@ -176,6 +176,25 @@ span{
         margin-top: 0;
         font-weight: normal;
     }
+    .largeBox{
+        background-color: $admin-blue;
+        color: $white;
+        margin: auto;
+        margin-top: 2em;
+        &-text{
+            padding-top: 2em;
+            padding-bottom: 2em;
+            padding-left: 1em;
+            padding-right: 1em;
+            color: $white;
+            text-align: center;
+            font-size: 30px;
+        }
+        &-container{
+            display: block;
+            margin: auto;
+        }
+    }
 }
 // MOBILE DEVICES
 @media screen and (max-width: 768px) {

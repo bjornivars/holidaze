@@ -14,7 +14,9 @@ export default function Contact() {
   const [success, setSuccess] = useState(false)
 
 
-  const onSubmit = (data) => {
+  const onSubmit = (event, data) => {
+    event.preventDefault()
+
     // console.log(data);
     const form = new FormData()
     form.append('clientName', data.clientName);
