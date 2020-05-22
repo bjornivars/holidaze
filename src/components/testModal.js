@@ -11,7 +11,8 @@ const Modal = ({ establishmentName,
 }) => {
     const { register, handleSubmit, errors } = useForm();
     const [success, setSuccess] = useState(false)
-    const onSubmit = (data) => {
+    const onSubmit = (data, e) => {
+        e.preventDefault();
         // console.log(data);
         const form = new FormData()
         form.append('establishment', data.establishment)
@@ -31,6 +32,7 @@ const Modal = ({ establishmentName,
         })
             .then(data => {//success
                 setSuccess(true)
+                e.preventDefault();
             }, error => { //failed
                 setSuccess("Oops.. Something went wrong. Please try again later")
             })
