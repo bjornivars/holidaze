@@ -161,7 +161,9 @@ span{
 
 // Desktop
 @media screen and (min-width: 992px) {
-
+    .onlyMobile{
+        display: none;
+    }
 }
 
 // Tablet
@@ -199,8 +201,13 @@ span{
             margin: auto;
         }
     }
+    .onlyMobile{
+        display: none;
+    }
 }
 // MOBILE DEVICES
 @media screen and (max-width: 768px) {
-
+    .onlyMobile{
+        display: block;
+    }
 }

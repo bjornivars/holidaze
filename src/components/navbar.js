@@ -11,10 +11,10 @@ const Navbar = (props) => {
                 /></Link>
             </div>
             <ul className=" [ nav-ul ] ">
-                <li><Link to="/" className=" [ nav-ul-li ] " >Home</Link></li>
-                <li><Link to="/allHotels" className=" [ nav-ul-li ] " >All Hotels</Link></li>
-                <li><Link to="/contact" className=" [ nav-ul-li ] " >Contact</Link></li>
-                <li><Link to="/adminHome" className=" [ nav-ul-li ] " >Admin</Link></li>
+                <li><Link to="/" className=" [ nav-ul-li ] " ><i className=" [ fa fa-home onlyMobile nav-ul-li-icon ] "></i>Home</Link></li>
+                <li><Link to="/allHotels" className=" [ nav-ul-li ] " ><i className=" [ fa fa-hotel onlyMobile nav-ul-li-icon ] "></i>All Hotels</Link></li>
+                <li><Link to="/contact" className=" [ nav-ul-li ] " ><i className="[ fa fa-comment onlyMobile nav-ul-li-icon ] "></i>Contact</Link></li>
+                <li><Link to="/adminHome" className=" [ nav-ul-li ] " ><i className=" [ fa fa-lock onlyMobile nav-ul-li-icon ] "></i>Admin</Link></li>
             </ul>
         </div>
     )

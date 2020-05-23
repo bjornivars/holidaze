@@ -59,6 +59,8 @@
         &-box{
             margin-top: 5%;
             padding-bottom: 4em;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
         }
     }
    }
