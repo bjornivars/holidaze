@@ -3,8 +3,8 @@ import React from 'react';
 const AllEnquiries = ({ establishment, clientName, email, checkin, checkout, notes, confirm }) => {
 
     return (
-        <div className=" [ enquiry col-8 col-t-10 d-flex jc-center m-auto ] ">
-            <div className=" [  col-6 col-t-6 enquiry-box ] ">
+        <div className=" [ col-8 col-t-10 col-m-11 d-flex jc-center m-auto enquiry ] ">
+            <div className=" [  col-6 col-t-6 col-m-12 enquiry-box ] ">
                 <h2 className=" [ enquiry-establishment ] ">{establishment}</h2>
                 <h3 className=" [ enquiry-name ] ">{clientName}</h3>
                 <p className=" [ enquiry-email ] ">{email}</p>
@@ -21,7 +21,7 @@ const AllEnquiries = ({ establishment, clientName, email, checkin, checkout, not
                     </div>
                 </div>
             </div>
-            <div className=" [ col-6 col-t-6 enquiry-box-right ] ">
+            <div className=" [ col-6 col-t-6 col-m-12 enquiry-box-right ] ">
                 <div>
                     <p className=" [ break-word ] ">{notes}</p>
                 </div>

@@ -204,10 +204,16 @@ span{
     .onlyMobile{
         display: none;
     }
+    .container{
+        margin-top: 10em;
+    }
 }
 // MOBILE DEVICES
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .onlyMobile{
         display: block;
+    }
+    .container{
+        margin-top: 5em;
     }
 }

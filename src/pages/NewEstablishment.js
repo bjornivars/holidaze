@@ -61,13 +61,13 @@ export default function ContactMessages(props) {
 
         <>
             <AdminNavbar />
-            <div className=" [ container m-auto col-6 col-t-8 ] ">
+            <div className=" [ container m-auto col-6 col-t-8 col-m-11 ] ">
                 <h1 className=" [ text-center ] ">New Establishment</h1>
 
                 <form onSubmit={handleSubmit(onSubmit)} className=" [ enquiry-form col-10 m-auto ] " >
 
                     <div className="[ form-input-dflex ]">
-                        <div className="[ col-8 col-t-12 ]">
+                        <div className="[ col-8 col-t-12 col-m-12 ]">
                             <label >Establishment Name</label>
                             <div className=" [ input-container ] ">
                                 <input
@@ -75,11 +75,11 @@ export default function ContactMessages(props) {
                                     placeholder="Establishment Name"
                                     name="establishmentName"
                                     ref={register({ required: true, maxLength: 40 })}
-                                    className=" [ form-input input-padding col-12 col-t-12 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-12 col-m-12 ] " />
                             </div>
                             {errors.establishmentName && <p className=" [ errorMessage ] ">Name is required</p>}
                         </div>
-                        <div className="[ col-3 col-t-12 ]">
+                        <div className="[ col-3 col-t-12 col-m-12 ]">
                             <label >Max Guests</label>
                             <div className=" [ input-container ] ">
                                 <input
@@ -87,14 +87,14 @@ export default function ContactMessages(props) {
                                     placeholder="Max Guests"
                                     name="maxGuests"
                                     ref={register({ required: true, maxLength: 4 })}
-                                    className=" [ form-input input-padding col-12 col-t-5 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-5 col-m-6 ] " />
                             </div>
                             {errors.maxGuests && <p className=" [ errorMessage ] ">Max guests is required</p>}
                         </div>
                     </div>
 
                     <div className="[ form-input-dflex ]">
-                        <div className="[ col-8 col-t-12 ]">
+                        <div className="[ col-8 col-t-12 col-m-12 ]">
                             <label >Establishment Email</label>
                             <div className=" [ input-container ] ">
                                 <input
@@ -102,11 +102,11 @@ export default function ContactMessages(props) {
                                     placeholder="Establishment Email"
                                     name="establishmentEmail"
                                     ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-                                    className=" [ form-input input-padding col-12 col-t-12 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-12 col-m-12 ] " />
                             </div>
                             {errors.establishmentEmail && <p className=" [ errorMessage ] ">Email is incorrect</p>}
                         </div>
-                        <div className="[ col-3 col-t-12 ]">
+                        <div className="[ col-3 col-t-12 col-m-12 ]">
                             <label >Breakfast included?</label>
                             <div className=" [ input-container ] ">
                                 <label >Yes</label>
@@ -127,7 +127,7 @@ export default function ContactMessages(props) {
                     </div>
 
                     <div className="[ form-input-dflex ]">
-                        <div className="[ col-12 col-t-12 ]">
+                        <div className="[ col-12 col-t-12 col-m-12 ]">
                             <label >Description</label>
                             <div className=" [ input-container ] ">
                                 <textarea
@@ -135,7 +135,7 @@ export default function ContactMessages(props) {
                                     placeholder="description"
                                     name="description"
                                     ref={register({ required: false })}
-                                    className=" [ form-input input-padding col-12 col-t-12 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-12 col-m-12 ] " />
                                 {errors.description && <p className=" [ errorMessage ] ">Checkin date is required</p>}
 
                             </div>
@@ -143,7 +143,7 @@ export default function ContactMessages(props) {
                     </div>
 
                     <div className="[ form-input-dflex ]">
-                        <div className="[ col-4 col-t-5 ]">
+                        <div className="[ col-4 col-t-5 col-m-12 ]">
                             <label >Latitude</label>
                             <div className=" [ input-container ] ">
                                 <input
@@ -151,11 +151,11 @@ export default function ContactMessages(props) {
                                     placeholder="Latitude"
                                     name="googleLat"
                                     ref={register({ required: true })}
-                                    className=" [ form-input input-padding col-12 col-t-12 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-12 col-m-12 ] " />
                             </div>
                             {errors.googleLat && <p className=" [ errorMessage ] ">Latitude is required</p>}
                         </div>
-                        <div className="[ col-4 col-t-5 ]">
+                        <div className="[ col-4 col-t-5 col-m-12 ]">
                             <label >Longitude</label>
                             <div className=" [ input-container ] ">
                                 <input
@@ -163,14 +163,14 @@ export default function ContactMessages(props) {
                                     placeholder="Longitude"
                                     name="googleLong"
                                     ref={register({ required: true })}
-                                    className=" [ form-input input-padding col-12 col-t-12 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-12 col-m-12 ] " />
                             </div>
                             {errors.googleLong && <p className=" [ errorMessage ] ">Longitude is required</p>}
                         </div>
                     </div>
 
                     <div className="[ form-input-dflex ]">
-                        <div className="[ col-4 col-t-12 ]">
+                        <div className="[ col-4 col-t-12 col-m-12 ]">
                             <label >Image (URL)</label>
                             <div className=" [ input-container ] ">
                                 <input
@@ -178,12 +178,12 @@ export default function ContactMessages(props) {
                                     placeholder="imageUrl"
                                     name="imageUrl"
                                     ref={register}
-                                    className=" [ form-input input-padding col-12 col-t-12 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-12 col-m-12 ] " />
 
                             </div>
                             {errors.imageUrl && <p className=" [ errorMessage ] ">Image is required</p>}
                         </div>
-                        <div className="[ col-4 col-t-12 ]">
+                        <div className="[ col-4 col-t-12 col-m-12 ]">
                             <label >Price</label>
                             <div className=" [ input-container ] ">
                                 <input
@@ -191,7 +191,7 @@ export default function ContactMessages(props) {
                                     placeholder="price"
                                     name="price"
                                     ref={register({ required: true, min: 1, maxLength: 10 })}
-                                    className=" [ form-input input-padding col-12 col-t-5 ] " />
+                                    className=" [ form-input input-padding col-12 col-t-5 col-m-6 ] " />
 
                             </div>
                             {errors.price && <p className=" [ errorMessage ] ">Price is required</p>}

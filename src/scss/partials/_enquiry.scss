@@ -29,9 +29,6 @@
 // Tablet
 @media screen and (max-width: 991px) {
     .enquiry{
-        box-sizing: border-box;
-        margin: auto;
-        border: 1px solid $black;
         margin-bottom: 2em;
         &-box{
             padding: 20px;
@@ -44,6 +41,17 @@
 
 
 // MOBILE DEVICES
-@media screen and (max-width: 768px) {
-
+@media screen and (max-width: 767px) {
+    .enquiry{
+        flex-wrap: wrap;
+        margin-bottom: 2em;
+        &-box{
+            border-right: none;
+            padding: 20px;
+            &-right{
+                box-sizing: border-box;
+                padding: 20px;
+            }
+        }
+    }
 }
