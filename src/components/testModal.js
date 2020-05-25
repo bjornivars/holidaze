@@ -14,6 +14,18 @@ const Modal = ({ establishmentName,
     const onSubmit = (data, e) => {
         e.preventDefault();
         // console.log(data);
+        var todaysDate = new Date(); // Gets today's date
+        // Max date attribute is in "YYYY-MM-DD".  Need to format today's date accordingly
+        var year = todaysDate.getFullYear();                        // YYYY
+        var month = ("0" + (todaysDate.getMonth() + 1)).slice(-2);  // MM
+        var day = ("0" + todaysDate.getDate()).slice(-2);           // DD
+        var maxDate = (year +"-"+ month +"-"+ day); // Results in "YYYY-MM-DD" for today's date 
+     
+        if(maxDate > data.checkin){
+            console.log("date SMALLER than today")
+        }else{
+            console.log("all gucci")
+        }
         const form = new FormData()
         form.append('establishment', data.establishment)
         form.append('clientName', data.clientName);
@@ -44,6 +56,7 @@ const Modal = ({ establishmentName,
     let sessionCheckin = sessionStorage.getItem('checkin')
     let sessionCheckout = sessionStorage.getItem('checkout')
     let sessionNotes = sessionStorage.getItem('notes')
+
 
     return (
         <div className=" [ modal ] ">
