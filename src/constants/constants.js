@@ -22,3 +22,6 @@ export const HEROKU_BYPASS_CORS = 'https://cors-anywhere.herokuapp.com/';
 Dreamy paradise is located at the beach with a great view over the City of Bullshit. The bar serves drinks like; "Fuck this", "Someone fix this shite", and "Jesus Christ, this should work". Take a stroll along the promonade of Hell, and experience the love of hate. Stay tuned for more!
 
 */
+
+/* public\contact.json
+C:\Users\bjorn\Desktop\repos\ExamBooking\holidaze\public\contact.json */

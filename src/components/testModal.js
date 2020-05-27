@@ -44,7 +44,6 @@ const Modal = ({ establishmentName,
         })
             .then(data => {//success
                 setSuccess(true)
-                e.preventDefault();
             }, error => { //failed
                 setSuccess("Oops.. Something went wrong. Please try again later")
             })
