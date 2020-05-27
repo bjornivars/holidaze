@@ -1,5 +1,10 @@
 // General styles
-
+.borderRound{
+    border-radius: 2em 2em 2em 2em;
+    background-color: rgb(228, 228, 228);
+    border: 1px solid rgb(175, 175, 175);
+    box-shadow: $box-shadow;
+}
 
 // Desktop
 @media screen and (min-width: 992px) {

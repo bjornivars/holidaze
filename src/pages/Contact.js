@@ -14,8 +14,7 @@ export default function Contact() {
   const [success, setSuccess] = useState(false)
 
 
-  const onSubmit = (event, data) => {
-    event.preventDefault()
+  const onSubmit = (data) => {
 
     // console.log(data);
     const form = new FormData()
@@ -72,7 +71,7 @@ export default function Contact() {
               <textarea
                 name="message"
                 placeholder="Enter Message"
-                ref={register({ required: true, maxLength: 800 })}
+                ref={register({ required: true, maxLength: 80000 })}
                 className=" [  form-input form-input-contact col-12 col-t-12 input-padding ] "
               />
             </div>

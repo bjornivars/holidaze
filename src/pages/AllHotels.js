@@ -37,13 +37,12 @@ export default function AllHotels() {
                 <div className=" [ header-search col-6 col-t-10 col-m-11 m-auto allHotels ] ">
                     <input
                         autoComplete="off"
-                        className=" [ header-search-input input-padding col-10 col-t-10 ] "
+                        className=" [ header-search-input input-padding col-10 col-t-10 borderRound ] "
                         type="search"
                         name="search"
                         placeholder="E.g Sunset"
                         onChange={handleFiltering}
                     />
-                    <Link to={`/allHotels`} className=" [ header-search-btn col-2 col-t-2 col-m-2 ] ">Search<i className=" [ fa fa-search header-search-btn-icon ] "></i></Link>
                 </div>
                 <div className=" [ col-10 m-auto d-flex jc-between flex-wrap hotel ] ">
                     {

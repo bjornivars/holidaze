@@ -15,7 +15,7 @@ const WinterHoliday = ({ image }) => {
                         of the globe. Skiing, saunas, reindeers, and cozy nights
                         are just hints of what you can expect!
                         </p>
-                    <Link to="/" className=" [ btn ] ">Check it out!</Link>
+                    <Link to="/hotelSpecific/9" className=" [ btn ] ">Check it out!</Link>
                 </div>
             </div>
         </div>
